@@ -10,14 +10,19 @@ import SwiftUI
 struct HomeView: View {
     @Binding var selection: Int
     @EnvironmentObject var placeStore: PlaceStore
+    let images = ["car", "back", "camp", "gl"]
     
     var userNickName: String = "멋사"
 
     var body: some View {
         
         ScrollView {
+            
             VStack{
-                let images = ["car", "back", "camp", "gl"]
+                Group {
+                    PhotoCardView()
+                }.frame(height: 50)
+                
                 Group{      // 배너
                     VStack {
                         HStack {
@@ -27,16 +32,25 @@ struct HomeView: View {
                                 .padding(.leading)
                                 .padding(.top)
                             Spacer()
-                            Button {
-                                
+                            NavigationLink {
+                                MyPageView()
                             } label: {
-                                Image(systemName: "bell")
+                                Image(systemName: "person.fill")
                                     .foregroundColor(.indigo)
                                     .font(.title)
-                                    
                             }
                             .padding(.top, 9)
                             .padding(.trailing, 18)
+                            
+                            
+//                            Button {
+//                                MyPageView()
+//                            } label: {
+//                                Image(systemName: "person.fill")
+//                            .foregroundColor(.indigo)
+//                            .font(.title)
+//                            }
+
                             
                         }
                         TabView {
@@ -171,8 +185,10 @@ struct HomeView: View {
     }
 }
 
-//struct HomeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomeView().environmentObject(PlaceStore())
-//    }
-//}
+struct HomeView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        HomeView(selection: .constant(1))
+    }
+}
+
