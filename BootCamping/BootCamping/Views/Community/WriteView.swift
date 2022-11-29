@@ -46,20 +46,15 @@ struct WriteView: View {
             }
             .navigationBarTitle(Text("글쓰기"), displayMode: .inline)
             .navigationBarItems(trailing: Button("완료", action: {
-                addPosts()
+                postStore.addPosts(outdoor: selectedOutdoor, category: selectedCategory, content: textContent)
+                dismiss()
             })
             )
         }.padding()
         
     }
     
-    func addPosts() {
-        let newPost = Post(outdoor: selectedOutdoor, category: selectedCategory, content: textContent, userName: "thekoon", date: "2022.11.29", likes: 0, commentsCount: 0)
-        
-        postData.append(newPost)
-        print(postData)
-        dismiss()
-    }
+
 }
 
 struct CategorySelectorView: View {
@@ -113,9 +108,10 @@ struct CategorySelectorView: View {
         }
     }
 }
-
-struct WriteView_Previews: PreviewProvider {
-    static var previews: some View {
-        WriteView(postStore: PostStore(posts: postData))
-    }
-}
+//
+//struct WriteView_Previews: PreviewProvider {
+//    @ObservedObject var postStore: PostStore
+//    static var previews: some View {
+//        WriteView(postStore: postStore.postData)
+//    }
+//}

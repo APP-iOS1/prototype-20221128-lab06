@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct CommunityView: View {
-    @ObservedObject var postStore = PostStore(posts: postData)
+    @ObservedObject var postStore: PostStore
+    
     
     var body: some View {
         VStack {
             FilteringView()
                 .padding()
             ScrollView {
-                ForEach (postStore.posts) { post in
+                ForEach (postStore.postData) { post in
                     PostCell(post: post)
                         .padding(.horizontal, 11)
                 }
@@ -30,13 +31,17 @@ struct CommunityView: View {
                     .accessibilityAddTraits(.isHeader)
             }
         }
-        .navigationBarItems(trailing: NavigationLink(destination: WriteView(postStore: PostStore(posts: postData)), label: {Text("글쓰기")})
-        )
+        .navigationBarItems(trailing: NavigationLink(destination: {
+            WriteView(postStore: postStore)
+        }, label: {
+            Text("글쓰기")
+        }))
+                                               
     }
 }
 
 struct CommunityView_Previews: PreviewProvider {
     static var previews: some View {
-        CommunityView()
+        CommunityView(postStore: PostStore())
     }
 }

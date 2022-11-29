@@ -20,7 +20,7 @@ struct BootCampingTabView: View {
             }.tag(1)
             
             NavigationStack {
-                CommunityView()
+                CommunityView(postStore: PostStore())
             }.tabItem {
                 Image(systemName: "newspaper.fill")
                 Text("커뮤니티")

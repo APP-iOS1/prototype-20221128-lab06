@@ -13,13 +13,13 @@ struct HomeView: View {
     let images = ["car", "back", "camp", "gl"]
     
     @State private var userNickName: String = "멋사"
+    @State private var isSheeting: Bool = false
     
     var body: some View {
         
         ScrollView {
             VStack(alignment: .leading){
-                //배너 뷰
-                Group{      // 배너
+                Group{
                     VStack {
                         HStack {
                             Text("나의 추억")
@@ -28,8 +28,8 @@ struct HomeView: View {
                                 .padding(.leading)
                                 .padding(.top)
                             Spacer()
-                            NavigationLink {
-                                MyPageView()
+                            Button {
+                                isSheeting.toggle()
                             } label: {
                                 Image(systemName: "person.fill")
                                     .foregroundColor(.indigo)
@@ -37,9 +37,15 @@ struct HomeView: View {
                             }
                             .padding(.top, 9)
                             .padding(.trailing, 18)
+                            .sheet(isPresented: $isSheeting) {
+                                MyPageView()
+                                    .presentationDetents([.large])
+                                    .presentationDragIndicator(.visible)
+                            }
+                            
                         }
                         //미니 포토카드 뷰
-
+                        
                         HomePhotoCards()
                             .frame(height: 300)
                             .padding(. vertical, 10)
