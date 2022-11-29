@@ -9,9 +9,9 @@ import SwiftUI
 
 struct HomePhotoCards: View {
     var body: some View {
-//                var homePhotoCards = ["photoCard1", "photoCard2", "photoCard3", "photoCard3"]
+                var homePhotoCards = ["photoCard1", "photoCard2", "photoCard3", "photoCard3"]
         
-        var homePhotoCards = [String]()
+//        var homePhotoCards = [String]()
         
         ScrollView(.horizontal, showsIndicators: false){
             ZStack {

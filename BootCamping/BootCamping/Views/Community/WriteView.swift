@@ -11,7 +11,6 @@ struct WriteView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var postStore: PostStore
     
-    
     //카테고리 선택
     @State private var selectedOutdoor: String = ""
     @State private var selectedCategory: String = ""
