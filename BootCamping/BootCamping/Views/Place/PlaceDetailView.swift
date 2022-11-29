@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlaceDetailView: View {
     
-    var places: Places
+    var places: Item
     
     var body: some View {
         
@@ -30,12 +30,12 @@ struct PlaceDetailView: View {
                     Group {
                         Text("#글램핑").foregroundColor(.indigo)
                         
-                        Text("\(places.name)")
+                        Text("\(places.facltNm)")
                             .font(.title).bold()
                             .padding(.vertical, 3)
                         
                         HStack {
-                            Text("\(places.place)")
+                            Text("\(places.addr1)")
                                 .font(.headline)
                                 .foregroundColor(.gray)
                             Spacer()
@@ -47,7 +47,7 @@ struct PlaceDetailView: View {
                         }
                         .padding(.bottom, 20)
                         
-                        Text("\(places.desc)").lineSpacing(7)
+                        Text("\(places.lineIntro)").lineSpacing(7)
                     }
                     Spacer()
                     Divider()
@@ -90,8 +90,8 @@ struct PlaceDetailView: View {
     }
 }
 
-struct PlaceDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlaceDetailView(places: placesList[1])
-    }
-}
+//struct PlaceDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlaceDetailView(places: Places(facltNm: "", facltDivNm: "", refineWgs84Lat: "", refineWgs84Logt: "", refineRoadnmAddr: "", refineLotnoAddr: "", facltTelno: "", roomCnt: "", plotAr: "", buildTfar: "", aceptncPosblPsncnt: "", parkngComprtCnt: "", convnceFacltInfo: "", safeFacltInfo: "", subfacltInfo: "", opertTmInfo: "", chrgInfo: "", mnginstTelno: "", mnginstNm: "", dataStdDe: ""))
+//    }
+//}
