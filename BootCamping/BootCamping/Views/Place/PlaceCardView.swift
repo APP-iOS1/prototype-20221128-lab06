@@ -20,7 +20,7 @@ struct PlaceCardView: View {
                     .foregroundColor(.black)
                 Spacer()
                 Image(systemName: "bookmark")
-                    .resizable().frame(width: 18)
+                    .resizable().frame(width: 18, height: 30)
                     .foregroundColor(.gray)
                     .padding(.trailing, 3)
             }
@@ -29,6 +29,7 @@ struct PlaceCardView: View {
                     .bold()
                     .font(.headline)
                     .foregroundColor(.gray)
+                    .lineLimit(1)
             }
             HStack {
                 Image("jeju1")
@@ -49,10 +50,20 @@ struct PlaceCardView: View {
             }
 
             Divider()
-            Text("\(places.intro)")
-                .lineSpacing(7)
-                .foregroundColor(.black)
-                .multilineTextAlignment(.leading)
+            if places.intro == "" {
+                Text("정보 없음")
+                    .lineSpacing(7)
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+
+            } else {
+                Text("\(places.intro)")
+                    .lineSpacing(7)
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+            }
         }
         .padding()
         .background(Color(.white))

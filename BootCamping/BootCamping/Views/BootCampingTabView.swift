@@ -36,7 +36,8 @@ struct BootCampingTabView: View {
             NavigationStack {
                 PlaceView()
             }.tabItem {
-                Image(systemName: "pin.fill")
+//                Image(systemName: "location.magnifyingglass")
+                Image(systemName: "map.fill")
                 Text("플레이스")
             }.tag(4)
             

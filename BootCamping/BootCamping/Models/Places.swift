@@ -7,14 +7,6 @@
 
 import Foundation
 
-//struct Places2: Identifiable {
-//    var id = UUID()
-//    var name: String
-//    var place: String
-//    var desc: String
-//    var kind: String
-//}
-
 // MARK: - Places
 struct Places: Codable, Hashable {
     let response: Response
@@ -135,20 +127,16 @@ class PlaceStore: ObservableObject {
         switch selectedCategory {
         case "all" :
             return places
-        case "camping":
-//            return places.filter { $0.induty == "일반야영장"}
-            return places.filter { $0.induty.contains("야영장")}
-        case "carbak" :
-//            return places.filter { $0.induty == "자동차야영장"}
+        case "일반야영장":
+            return places.filter { $0.induty.contains("일반야영장")}
+        case "자동차야영장" :
             return places.filter { $0.induty.contains("자동차야영장")}
-        case "glamping":
-//            return places.filter { $0.induty == "글램핑"}
+        case "글램핑":
             return places.filter { $0.induty.contains("글램핑")}
-        default :
-//            return places.filter { $0.induty == "backpack"}
+        case "카라반":
             return places.filter { $0.induty.contains("카라반")}
+        default :
+            return places
         }
     }
-    
-    
 }

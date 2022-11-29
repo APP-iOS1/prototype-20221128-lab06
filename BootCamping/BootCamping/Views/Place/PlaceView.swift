@@ -11,8 +11,11 @@ struct PlaceView: View {
     
     @EnvironmentObject var placeStore: PlaceStore
     var fecthData: FetchData = FetchData()
-//    let url: String = "https://apis.data.go.kr/B551011/GoCamping/searchList?numOfRows=15&pageNo=1&MobileOS=IOS&MobileApp=bootcamping&serviceKey=1L%2BOYunfglS6UkMxXuvlyqHspdv1jlOG1y6KHTwm2iYU6PGtKGH1jv6bORueQEwQBwzbUXzaukBp2mGzabnQ%2Bw%3D%3D&keyword=글램핑&_type=json"
-    let url: String = "https://apis.data.go.kr/B551011/GoCamping/basedList?serviceKey=NqaJrr6QywR%2FHR1aHsIzjVnRWbbZ0QF1cJGSCR8HufGaxum3nJWAYZ3kwYqe8vcwOBVBRf8bL2pWS%2BikwUKF3g%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json"
+    
+    @State var page: Int = 1
+    @State private var isLoading: Bool = false
+
+    //    let url: String = "https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=15&pageNo=1&MobileOS=IOS&MobileApp=BootCamping&serviceKey=1L%2BOYunfglS6UkMxXuvlyqHspdv1jlOG1y6KHTwm2iYU6PGtKGH1jv6bORueQEwQBwzbUXzaukBp2mGzabnQ%2Bw%3D%3D&_type=json"
     
     var body: some View {
         VStack {
@@ -24,11 +27,11 @@ struct PlaceView: View {
                 .background(placeStore.selectedCategory == "all" ? .indigo : .white)
                 .cornerRadius(10)
                 
-                Button { placeStore.selectedCategory = "야영장" } label: {
+                Button { placeStore.selectedCategory = "일반야영장" } label: {
                     Text("#캠핑").padding(7)
                 }
-                .foregroundColor(placeStore.selectedCategory == "야영장" ? .white : .black)
-                .background(placeStore.selectedCategory == "야영장" ? .indigo : .white)
+                .foregroundColor(placeStore.selectedCategory == "일반야영장" ? .white : .black)
+                .background(placeStore.selectedCategory == "일반야영장" ? .indigo : .white)
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "자동차야영장" } label: {
@@ -38,49 +41,56 @@ struct PlaceView: View {
                 .background(placeStore.selectedCategory == "자동차야영장" ? .indigo : .white)
                 .cornerRadius(10)
                 
-                Button { placeStore.selectedCategory = "backpack" } label: {
-                    Text("#백패킹").padding(7)
+                Button { placeStore.selectedCategory = "카라반" } label: {
+                    Text("#카라반").padding(7)
                 }
-                .foregroundColor(placeStore.selectedCategory == "backpack" ? .white : .black)
-                .background(placeStore.selectedCategory == "backpack" ? .indigo : .white)
+                .foregroundColor(placeStore.selectedCategory == "카라반" ? .white : .black)
+                .background(placeStore.selectedCategory == "카라반" ? .indigo : .white)
                 .cornerRadius(10)
                 
-                Button { placeStore.selectedCategory = "glamping" } label: {
+                Button { placeStore.selectedCategory = "글램핑" } label: {
                     Text("#글램핑").padding(7)
                 }
-                .foregroundColor(placeStore.selectedCategory == "glamping" ? .white : .black)
-                .background(placeStore.selectedCategory == "glamping" ? .indigo : .white)
+                .foregroundColor(placeStore.selectedCategory == "글램핑" ? .white : .black)
+                .background(placeStore.selectedCategory == "글램핑" ? .indigo : .white)
                 .cornerRadius(10)
             }
             .padding(.vertical)
-            Button {
-                Task {
-                    placeStore.places = try await fecthData.fetchData(url: url)
-                    print("task")
-                }
-            } label: {
-                Text("data")
-            }
             
             ScrollView {
                 
-                VStack(alignment: .leading) {
-                    ForEach(placeStore.returnPlaces(), id: \.self) { place in
+                LazyVStack(alignment: .leading) {
+                    ForEach(Array(placeStore.returnPlaces().enumerated()), id: \.offset) { (index, place) in
                         NavigationLink(destination: PlaceDetailView(places: place)) {
                             PlaceCardView(places: place)
                                 .padding(.horizontal, 10)
                         }
+                        .onAppear {
+                            if index == placeStore.returnPlaces().count - 1 {
+                                Task {
+                                    page += 1
+                                    isLoading = true
+                                    try await Task.sleep(until: .now + .seconds(1), clock: .continuous)
+                                    placeStore.places.append(contentsOf: try await fecthData.fetchData(page: page))
+                                    isLoading = false
+                                }
+                            }
+                        }
                     }
+                }
+                if isLoading == true {
+                    ProgressView().frame(height: 100)
+                }
+            }
+            .onAppear {
+                Task {
+                    isLoading = true
+                    placeStore.places.append(contentsOf: try await fecthData.fetchData(page: page))
                 }
             }
             .background(Color(hue: 0.503, saturation: 0.0, brightness: 0.909))
         }
-        .onAppear {
-            Task {
-                placeStore.places = try await fecthData.fetchData(url: url)
-            }
-        }
-
+        
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
