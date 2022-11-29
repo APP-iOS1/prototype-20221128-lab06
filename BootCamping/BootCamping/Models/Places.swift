@@ -7,36 +7,148 @@
 
 import Foundation
 
-struct Places: Identifiable {
-    var id = UUID()
-    var name: String
-    var place: String
-    var desc: String
-    var kind: String
+//struct Places2: Identifiable {
+//    var id = UUID()
+//    var name: String
+//    var place: String
+//    var desc: String
+//    var kind: String
+//}
+
+// MARK: - Places
+struct Places: Codable, Hashable {
+    let response: Response
 }
 
-var placesList: [Places] = [
-    Places(name: "애월더선셋", place: "제주 제주시 애월읍", desc: "해지는 모습을 볼 수 있는 제주 애월카페. 맑은 날 가면 멋진 바다배경의 인생사진을 얻을 수 있다.", kind: "carbak"),
-    Places(name: "주전패밀리캠핑장", place: "울산 동구 주전해안길", desc: "울산 주전해안에 위치한 해돋이 명소 캠핑장. 총 5개 구역으로 구분된다.", kind: "camping"),
-    Places(name: "더무빙카라반", place: "부산 기장군 장안읍", desc: "자연 속에서 즐기는 감성 카라반 캠핑. 차별화된 독특한 글램핑 시설의 프리미엄 카라반 리조트로, 바다와 해수욕장이 인접해 있다.", kind: "backpack")
-]
+// MARK: - Response
+struct Response: Codable, Hashable {
+    let header: Header
+    let body: Body
+}
 
-// 카테고리 별 데이터를 리턴해주는 ObservableObject 추가
+// MARK: - Body
+struct Body: Codable, Hashable {
+    let items: Items
+    let numOfRows, pageNo, totalCount: Int
+}
+
+// MARK: - Items
+struct Items: Codable, Hashable {
+    let item: [Item]
+}
+
+// MARK: - Header
+struct Header: Codable, Hashable {
+    let resultCode, resultMsg: String
+}
+
+struct Item: Codable, Hashable {
+    let contentId: String
+    let facltNm: String
+    let lineIntro: String
+    let intro: String
+    let allar: String
+    let insrncAt: String
+    let trsagntNo: String
+    let bizrno: String
+    let facltDivNm: String
+    let mangeDivNm: String
+    let mgcDiv: String
+    let manageSttus: String
+    let hvofBgnde: String
+    let hvofEnddle: String
+    let featureNm: String
+    let induty: String
+    let lctCl: String
+    let doNm: String
+    let sigunguNm: String
+    let zipcode: String
+    let addr1: String
+    let addr2: String
+    let mapX: String
+    let mapY: String
+    let direction: String
+    let tel: String
+    let homepage: String
+    let resveUrl: String
+    let resveCl: String
+    let manageNmpr: String
+    let gnrlSiteCo: String
+    let autoSiteCo: String
+    let glampSiteCo: String
+    let caravSiteCo: String
+    let indvdlCaravSiteCo: String
+    let sitedStnc: String
+    let siteMg1Width: String
+    let siteMg2Width: String
+    let siteMg3Width: String
+    let siteMg1Vrticl: String
+    let siteMg2Vrticl: String
+    let siteMg3Vrticl: String
+    let siteMg1Co: String
+    let siteMg2Co: String
+    let siteMg3Co: String
+    let siteBottomCl1: String
+    let siteBottomCl2: String
+    let siteBottomCl3: String
+    let siteBottomCl4: String
+    let siteBottomCl5: String
+    let tooltip: String
+    let glampInnerFclty: String
+    let caravInnerFclty: String
+    let prmisnDe: String
+    let operPdCl: String
+    let operDeCl: String
+    let trlerAcmpnyAt: String
+    let caravAcmpnyAt: String
+    let toiletCo: String
+    let swrmCo: String
+    let wtrplCo: String
+    let brazierCl: String
+    let sbrsCl: String
+    let sbrsEtc: String
+    let posblFcltyCl: String
+    let posblFcltyEtc: String
+    let clturEventAt: String
+    let clturEvent: String
+    let exprnProgrmAt: String
+    let exprnProgrm: String
+    let extshrCo: String
+    let frprvtWrppCo: String
+    let frprvtSandCo: String
+    let fireSensorCo: String
+    let themaEnvrnCl: String
+    let eqpmnLendCl: String
+    let animalCmgCl: String
+    let tourEraCl: String
+    let firstImageUrl: String
+    let createdtime: String
+    let modifiedtime: String
+}
+
+//// 카테고리 별 데이터를 리턴해주는 ObservableObject 추가
 class PlaceStore: ObservableObject {
+    @Published var places: [Item] = []
     @Published var selectedCategory: String = "all"
     
-    func returnPlaces() -> [Places] {
+    func returnPlaces() -> [Item] {
         switch selectedCategory {
         case "all" :
-            return placesList
+            return places
         case "camping":
-            return placesList.filter { $0.kind == "camping"}
+//            return places.filter { $0.induty == "일반야영장"}
+            return places.filter { $0.induty.contains("야영장")}
         case "carbak" :
-            return placesList.filter { $0.kind == "carbak"}
+//            return places.filter { $0.induty == "자동차야영장"}
+            return places.filter { $0.induty.contains("자동차야영장")}
         case "glamping":
-            return placesList.filter { $0.kind == "glamping"}
+//            return places.filter { $0.induty == "글램핑"}
+            return places.filter { $0.induty.contains("글램핑")}
         default :
-            return placesList.filter { $0.kind == "backpack"}
+//            return places.filter { $0.induty == "backpack"}
+            return places.filter { $0.induty.contains("카라반")}
         }
     }
+    
+    
 }

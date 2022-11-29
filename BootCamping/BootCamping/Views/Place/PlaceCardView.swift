@@ -9,12 +9,12 @@ import SwiftUI
 
 struct PlaceCardView: View {
     
-    var places: Places
+    var places: Item
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("\(places.name)")
+                Text("\(places.facltNm)")
                     .font(.title)
                     .bold()
                     .foregroundColor(.black)
@@ -25,7 +25,7 @@ struct PlaceCardView: View {
                     .padding(.trailing, 3)
             }
             HStack {
-                Text("\(Image(systemName: "mappin.circle.fill")) \(places.place)")
+                Text("\(Image(systemName: "mappin.circle.fill")) \(places.addr1)")
                     .bold()
                     .font(.headline)
                     .foregroundColor(.gray)
@@ -49,7 +49,7 @@ struct PlaceCardView: View {
             }
 
             Divider()
-            Text("\(places.desc)")
+            Text("\(places.intro)")
                 .lineSpacing(7)
                 .foregroundColor(.black)
                 .multilineTextAlignment(.leading)
@@ -62,8 +62,8 @@ struct PlaceCardView: View {
     }
 }
 
-struct PlaceCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlaceCardView(places: placesList[1] )
-    }
-}
+//struct PlaceCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlaceCardView(places: )
+//    }
+//}

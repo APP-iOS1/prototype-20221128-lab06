@@ -13,6 +13,7 @@
 		6327BE4D292240E0000BA3FF /* PlaceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327BE4B292240E0000BA3FF /* PlaceCardView.swift */; };
 		6327BE5229226D7D000BA3FF /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327BE5129226D7D000BA3FF /* MyProfileView.swift */; };
 		6327BE5429226DC1000BA3FF /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327BE5329226DC1000BA3FF /* PlaceDetailView.swift */; };
+		6331F3E82935A75B004F879E /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331F3E72935A75B004F879E /* FetchData.swift */; };
 		637DEA492922009100A16ADB /* BootCampingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DEA482922009100A16ADB /* BootCampingApp.swift */; };
 		637DEA4B2922009100A16ADB /* BootCampingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DEA4A2922009100A16ADB /* BootCampingTabView.swift */; };
 		637DEA4D2922009300A16ADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637DEA4C2922009300A16ADB /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		6327BE4B292240E0000BA3FF /* PlaceCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCardView.swift; sourceTree = "<group>"; };
 		6327BE5129226D7D000BA3FF /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		6327BE5329226DC1000BA3FF /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
+		6331F3E72935A75B004F879E /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		637DEA452922009100A16ADB /* BootCamping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BootCamping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		637DEA482922009100A16ADB /* BootCampingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootCampingApp.swift; sourceTree = "<group>"; };
 		637DEA4A2922009100A16ADB /* BootCampingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootCampingTabView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				63BB56CF29221F8400B49B75 /* Places.swift */,
+				6331F3E72935A75B004F879E /* FetchData.swift */,
 				63FA00E12922B5F600D433AB /* Posts.swift */,
 				7C9DE168292280A20010BF13 /* PhotoCardData.swift */,
 				0622F6062924BCBC008BD011 /* TabSelection.swift */,
@@ -250,6 +253,7 @@
 			files = (
 				637DEA5D2922098E00A16ADB /* HomeView.swift in Sources */,
 				7C9DE169292280A20010BF13 /* PhotoCardData.swift in Sources */,
+				6331F3E82935A75B004F879E /* FetchData.swift in Sources */,
 				63BB56D029221F8400B49B75 /* Places.swift in Sources */,
 				637DEA4B2922009100A16ADB /* BootCampingTabView.swift in Sources */,
 				6327BE5229226D7D000BA3FF /* MyProfileView.swift in Sources */,
