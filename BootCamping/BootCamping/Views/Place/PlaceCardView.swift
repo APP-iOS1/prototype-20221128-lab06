@@ -9,26 +9,27 @@ import SwiftUI
 
 struct PlaceCardView: View {
     
-    var places: Places
+    var places: Item
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("\(places.name)")
+                Text("\(places.facltNm)")
                     .font(.title)
                     .bold()
                     .foregroundColor(.black)
                 Spacer()
                 Image(systemName: "bookmark")
-                    .resizable().frame(width: 18)
+                    .resizable().frame(width: 18, height: 30)
                     .foregroundColor(.gray)
                     .padding(.trailing, 3)
             }
             HStack {
-                Text("\(Image(systemName: "mappin.circle.fill")) \(places.place)")
+                Text("\(Image(systemName: "mappin.circle.fill")) \(places.addr1)")
                     .bold()
                     .font(.headline)
                     .foregroundColor(.gray)
+                    .lineLimit(1)
             }
             HStack {
                 Image("jeju1")
@@ -49,10 +50,20 @@ struct PlaceCardView: View {
             }
 
             Divider()
-            Text("\(places.desc)")
-                .lineSpacing(7)
-                .foregroundColor(.black)
-                .multilineTextAlignment(.leading)
+            if places.intro == "" {
+                Text("정보 없음")
+                    .lineSpacing(7)
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+
+            } else {
+                Text("\(places.intro)")
+                    .lineSpacing(7)
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+            }
         }
         .padding()
         .background(Color(.white))
@@ -62,8 +73,8 @@ struct PlaceCardView: View {
     }
 }
 
-struct PlaceCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlaceCardView(places: placesList[1] )
-    }
-}
+//struct PlaceCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlaceCardView(places: )
+//    }
+//}
