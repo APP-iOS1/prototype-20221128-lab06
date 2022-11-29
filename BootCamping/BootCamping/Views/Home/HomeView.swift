@@ -12,21 +12,17 @@ struct HomeView: View {
     @EnvironmentObject var placeStore: PlaceStore
     let images = ["car", "back", "camp", "gl"]
     
-    var userNickName: String = "멋사"
-
+    @State private var userNickName: String = "멋사"
+    
     var body: some View {
         
         ScrollView {
-            
-            VStack{
-                Group {
-                    PhotoCardView()
-                }.frame(height: 50)
-                
+            VStack(alignment: .leading){
+                //배너 뷰
                 Group{      // 배너
                     VStack {
                         HStack {
-                            Text("추천 게시글")
+                            Text("나의 추억")
                                 .font(.title)
                                 .bold()
                                 .padding(.leading)
@@ -41,18 +37,17 @@ struct HomeView: View {
                             }
                             .padding(.top, 9)
                             .padding(.trailing, 18)
-                            
-                            
-//                            Button {
-//                                MyPageView()
-//                            } label: {
-//                                Image(systemName: "person.fill")
-//                            .foregroundColor(.indigo)
-//                            .font(.title)
-//                            }
-
-                            
                         }
+                        //미니 포토카드 뷰
+
+                        HomePhotoCards()
+                            .frame(height: 300)
+                            .padding(. vertical, 10)
+                        Text("추천 게시판")
+                            .font(.title)
+                            .bold()
+                            .padding(.leading, -185)
+                        //배너 뷰
                         TabView {
                             ForEach(images, id: \.self) { item in
                                 Image(item)
@@ -65,120 +60,14 @@ struct HomeView: View {
                     }
                 }
                 Spacer()
-                Group{
-                    HStack {
-                        Text("카테고리")
-                            .font(.title)
-                            .bold()
-                            .padding(.leading)
-                        Spacer()
-                    }
-                    .padding(.top, 10)
-                    HStack{     //카테고리
-                        Spacer()
-                        
-                        VStack {
-                            Button {
-                                selection = 4
-                                placeStore.selectedCategory = "camping"
-                                
-                            } label: {
-                                Image("camping")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .shadow(radius: 5)
-                            }
-                            Text("캠핑")
-                            
-                        }
-                        Spacer()
-                        VStack {
-                            Button {
-                                selection = 4
-                                placeStore.selectedCategory = "carbak"
-                            } label: {
-                                Image("carbak")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .shadow(radius: 5)
-                            }
-                            Text("차박")
-                        }
-                        Spacer()
-                        VStack {
-                            Button {
-                                selection = 4
-                                placeStore.selectedCategory = "backpack"
-                            } label: {
-                                Image("backpacking")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .shadow(radius: 5)
-                            }
-                            Text("백패킹")
-                            
-                        }
-                        Spacer()
-                        VStack {
-                            Button {
-                                selection = 4
-                                placeStore.selectedCategory = "glamping"
-                            } label: {
-                                Image("glamping")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .shadow(radius: 5)
-                            }
-                            Text("글램핑")
-                        }
-                        Spacer()
-                    }
-                }
-                Spacer()
                 
-                Group {     //추천여행지
-                    VStack{
-                        HStack{
-                            Text("\(userNickName) 님, ")
-                                .font(.title)
-                                .bold()
-                                .padding(.leading)
-                            Spacer()
-                        }
-                        HStack {
-                            Text("이번엔 어디로 떠나볼까요?")
-                                .font(.title)
-                                .bold()
-                                .padding(.leading)
-                            Spacer()
-                        }
-                    }.padding(.top, 10)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack{
-                            let travleImages = ["jeju","gangwon","busan","gwangju", "Gyeonggi"]
-                            let travlenames = ["제주도","강원도","부산","광주", "경기도"]
-                            ForEach(0..<travleImages.count, id: \.self) {
-                                idx in
-                                ZStack {
-                                    Image(travleImages[idx])
-                                        .resizable()
-                                        .frame(width: 95, height: 95)
-                                        .clipShape(Circle())
-                                    
-                                    Text(travlenames[idx])
-                                        .font(.title3)
-                                        .bold()
-                                        .foregroundColor(.white)
-                                }
-                                
-                            }
-                            
-                        }.padding(.horizontal, 10.0)
-                    }
-                    
-                    
-                }
                 
+                //카테고리
+                HomeCategory(selection: $selection)
+                    .padding(.horizontal, 10)
+                
+                //추천 여행지
+                RecommendHomeView(userNickName: $userNickName)
                 Spacer()
             }
         }
