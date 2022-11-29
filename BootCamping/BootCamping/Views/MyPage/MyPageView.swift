@@ -10,6 +10,11 @@ import SwiftUI
 struct MyPageView: View {
     var body: some View {
         ScrollView {
+            Text("마이캠핑")
+                .font(.system(.largeTitle, weight: .bold))
+                .padding(.leading, -180)
+                .padding(.top, 15)
+            
             NavigationLink(destination: MyProfileView()) {
                 ProfileView()
             }

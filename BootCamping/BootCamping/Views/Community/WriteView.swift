@@ -9,12 +9,17 @@ import SwiftUI
 
 struct WriteView: View {
     @Environment(\.dismiss) private var dismiss
+    @ObservedObject var postStore: PostStore
     
+    
+    //카테고리 선택
     @State private var selectedOutdoor: String = ""
     @State private var selectedCategory: String = ""
     
+    //피커가 나타나는거
     @State private var isShowingPicker: Bool = true
     
+    //유저가 쓴 글 받는 스트링?
     @State private var textContent: String = ""
     
     var body: some View {
@@ -40,10 +45,16 @@ struct WriteView: View {
                     .border(.indigo)
             }
             .navigationBarTitle(Text("글쓰기"), displayMode: .inline)
-            .navigationBarItems(trailing: Button("완료", action: {dismiss()})
-                )
+            .navigationBarItems(trailing: Button("완료", action: {
+                postStore.addPosts(outdoor: selectedOutdoor, category: selectedCategory, content: textContent)
+                dismiss()
+            })
+            )
         }.padding()
+        
     }
+    
+
 }
 
 struct CategorySelectorView: View {
@@ -69,6 +80,8 @@ struct CategorySelectorView: View {
                     Picker("글 주제", selection: $selectedCategory) {
                         Text("자유").tag("자유")
                         Text("질문").tag("질문")
+                        Text("캠핑팁").tag("캠핑팁")
+                        Text("중고거래").tag("중고거래")
                         Text("동행").tag("동행")
                     }
                     .pickerStyle(.segmented)
@@ -77,9 +90,11 @@ struct CategorySelectorView: View {
             .padding()
             isWarning ? Text("❗️게시글의 주제를 선택해주세요") : Text("")
             HStack {
+                Spacer()
                 Button("취소", action: {
                     isShowingPicker = false
                 })
+                Spacer()
                 Button("선택완료", action: {
                     if !selectedOutdoor.isEmpty && !selectedCategory.isEmpty {
                         isShowingPicker = false
@@ -87,14 +102,16 @@ struct CategorySelectorView: View {
                         isWarning = true
                     }
                 })
+                Spacer()
             }
             .padding()
         }
     }
 }
-
-struct WriteView_Previews: PreviewProvider {
-    static var previews: some View {
-        WriteView()
-    }
-}
+//
+//struct WriteView_Previews: PreviewProvider {
+//    @ObservedObject var postStore: PostStore
+//    static var previews: some View {
+//        WriteView(postStore: postStore.postData)
+//    }
+//}
