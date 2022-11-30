@@ -59,6 +59,7 @@ struct SearchBar: View {
                     .animation(.default)
                 }
             }
+            .padding(.top, 20)
             Spacer()
         }
         .navigationBarTitleDisplayMode(.inline)

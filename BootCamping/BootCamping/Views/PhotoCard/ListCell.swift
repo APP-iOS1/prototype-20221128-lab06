@@ -15,6 +15,7 @@ struct ListCell: View {
             Image(listCell.image)
                 .resizable()
                 .frame(width: 100, height: 100)
+                .cornerRadius(20)
             Spacer()
             VStack(alignment: .trailing) {
                 Text(listCell.date)
@@ -23,7 +24,6 @@ struct ListCell: View {
                     .font(.title2)
                     .padding(.top, 5)
             }
-            .padding()
         }
     }
 }

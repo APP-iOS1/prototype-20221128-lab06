@@ -99,6 +99,7 @@ struct PlaceView: View {
                     .bold()
                     .accessibilityAddTraits(.isHeader)
             }
+            
         }
     }
 }

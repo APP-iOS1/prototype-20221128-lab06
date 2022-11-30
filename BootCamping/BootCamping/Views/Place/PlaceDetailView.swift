@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PlaceDetailView: View {
     
+    @State private var isFavorite: Bool = false
+    
     var places: Item
     
     var body: some View {
@@ -92,8 +94,17 @@ struct PlaceDetailView: View {
                         .clipShape(Circle())
                 }
             }.offset(x: 140, y: 280)
+
         }
+        .navigationBarItems(trailing: Button {
+            isFavorite.toggle()
+        } label: {
+            Image(systemName: isFavorite ? "bookmark.fill" : "bookmark").foregroundColor(isFavorite ? .yellow : .white).opacity(0.8)
+                }
+                )
+
     }
+
 }
 
 //struct PlaceDetailView_Previews: PreviewProvider {
