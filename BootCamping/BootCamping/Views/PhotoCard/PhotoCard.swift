@@ -56,7 +56,8 @@ struct PhotoCard: View {
                 } else if isGrid {
                     gridView()
                 } else if isList{
-                    ListView()
+                    Text("리스트뷰 구현 예정")
+//                    ListView()
                 }
             }
 
