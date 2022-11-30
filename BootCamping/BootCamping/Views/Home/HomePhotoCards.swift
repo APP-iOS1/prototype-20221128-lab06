@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomePhotoCards: View {
     var body: some View {
-                var homePhotoCards = ["photoCard1", "photoCard2", "photoCard3", "photoCard3"]
+                var homePhotoCards = ["photoCard1", "photoCard2", "photoCard3", "1", "2", "3"]
         
 //        var homePhotoCards = [String]()
         
@@ -58,9 +58,9 @@ struct HomePhotoCards: View {
                                             .cornerRadius(20)
                                     }
                                     .shadow(radius: 3)
-                                    .padding(.leading, 5)
+                                    .padding(.leading, 3)
                                     .padding(.vertical, 10)
-                                    .padding(.trailing, 10)
+                                    .padding(.trailing, 3)
                                 }
                             }
                         }

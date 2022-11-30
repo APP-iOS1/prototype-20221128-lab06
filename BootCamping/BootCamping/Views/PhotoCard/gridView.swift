@@ -9,7 +9,7 @@ import SwiftUI
 
 struct gridView: View {
     
-    var photoCards = ["photoCard1", "photoCard2", "photoCard3","photoCard3","photoCard3","photoCard3","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard2","photoCard2","photoCard2"]
+    var photoCards = ["1", "2", "3","4","5","6","7","8","9","10","11","12","13","14"]
     
     let columns = [ GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     

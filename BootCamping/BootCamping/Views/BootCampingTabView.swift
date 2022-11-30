@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BootCampingTabView: View {
+    @State var text: String = ""
     @State private var selection: Int = 1
     
     var body: some View {
@@ -20,10 +21,10 @@ struct BootCampingTabView: View {
             }.tag(1)
             
             NavigationStack {
-                CommunityView(postStore: PostStore())
+                SearchBar(text: $text)
             }.tabItem {
-                Image(systemName: "newspaper.fill")
-                Text("커뮤니티")
+                Image(systemName: "location.magnifyingglass")
+                Text("검색")
             }.tag(2)
             
             NavigationStack {
@@ -42,11 +43,17 @@ struct BootCampingTabView: View {
             }.tag(4)
             
             NavigationStack {
-                MyPageView()
+                CommunityView(postStore: PostStore())
             }.tabItem {
-                Image(systemName: "person.fill")
-                Text("마이 캠핑")
+                Image(systemName: "newspaper.fill")
+                Text("커뮤니티")
             }.tag(5)
+//            NavigationStack {
+//                MyPageView()
+//            }.tabItem {
+//                Image(systemName: "person.fill")
+//                Text("마이 캠핑")
+//            }.tag(5)
         }
     }
 }

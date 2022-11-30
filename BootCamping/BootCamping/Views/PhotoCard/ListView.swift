@@ -4,20 +4,34 @@
 //
 //  Created by Deokhun KIM on 2022/11/30.
 //
+//
+import SwiftUI
 
-//import SwiftUI
-//
-//struct ListView: View {
-//    
-//    @ObservedObject var photoList: PhotoCardList
-//    
-//    var body: some View {
-//        ForEach(<#T##data: Binding<MutableCollection & RandomAccessCollection>##Binding<MutableCollection & RandomAccessCollection>#>, id: <#T##KeyPath<C.Element, _>#>, content: <#T##(Binding<C.Element>) -> _#>)
-//    }
-//}
-//
-//struct ListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListView()
-//    }
-//}
+struct ListView: View {
+    @ObservedObject var listStore: ListStore
+    
+    // 사진, 날짜, 이름
+    
+    //    @ObservedObject var photoList: PhotoCardList
+    
+//    // 포토카드 사진
+//    var photoCards = ["photoCard1", "photoCard2", "photoCard3","photoCard3","photoCard3","photoCard3","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard2","photoCard2","photoCard2"]
+    
+    // 날짜
+    
+    
+    var body: some View {
+        List {
+            ForEach(listStore.listData) { item in
+                ListCell(listCell: item)
+            }
+        }
+        .listStyle(.plain)
+    }
+}
+
+struct ListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ListView(listStore: ListStore())
+    }
+}
