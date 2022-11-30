@@ -14,7 +14,7 @@ struct PlaceCardView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             HStack {
-                Text("\(places.facltNm)")
+                Text("\(String(Array(places.facltNm).filter { !"(주)".contains($0) }))")
                     .font(.title2)
                     .kerning(-0.5)
                     .foregroundColor(.black)

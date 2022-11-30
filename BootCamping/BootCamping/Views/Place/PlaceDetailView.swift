@@ -32,7 +32,7 @@ struct PlaceDetailView: View {
                     Group {
                         Text("#글램핑").foregroundColor(.indigo)
                         
-                        Text("\(places.facltNm)")
+                        Text("\(String(Array(places.facltNm).filter { !"(주)".contains($0) }))")
                             .font(.title)
                             .kerning(-0.5)
                             .padding(.vertical, 3)
