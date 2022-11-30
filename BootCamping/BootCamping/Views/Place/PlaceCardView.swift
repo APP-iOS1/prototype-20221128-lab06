@@ -12,22 +12,24 @@ struct PlaceCardView: View {
     var places: Item
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 5) {
             HStack {
                 Text("\(places.facltNm)")
-                    .font(.title)
-                    .bold()
+                    .font(.title2)
+                    .kerning(-0.5)
                     .foregroundColor(.black)
                 Spacer()
                 Image(systemName: "bookmark")
-                    .resizable().frame(width: 18, height: 30)
+                    .font(.body)
                     .foregroundColor(.gray)
                     .padding(.trailing, 3)
             }
+            Text("\(Image(systemName: "star.fill")) 5.0점 (후기 4개)")
+                .font(.footnote)
+            
             HStack {
                 Text("\(Image(systemName: "mappin.circle.fill")) \(places.addr1)")
-                    .bold()
-                    .font(.headline)
+                    .font(.subheadline)
                     .foregroundColor(.gray)
                     .lineLimit(1)
             }
@@ -36,18 +38,19 @@ struct PlaceCardView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 100)
-                    .cornerRadius(20)
+                    .cornerRadius(10)
                 Image("jeju2")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 100)
-                    .cornerRadius(20)
+                    .cornerRadius(10)
                 Image("jeju3")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 100)
-                    .cornerRadius(20)
+                    .cornerRadius(10)
             }
+            .padding(.vertical, 7)
 
             Divider()
             if places.intro == "" {
@@ -59,6 +62,7 @@ struct PlaceCardView: View {
 
             } else {
                 Text("\(places.intro)")
+                    .font(.subheadline)
                     .lineSpacing(7)
                     .foregroundColor(.black)
                     .multilineTextAlignment(.leading)

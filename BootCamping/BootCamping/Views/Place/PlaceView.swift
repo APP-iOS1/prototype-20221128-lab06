@@ -14,7 +14,7 @@ struct PlaceView: View {
     
     @State var page: Int = 1
     @State private var isLoading: Bool = false
-
+    
     //    let url: String = "https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=15&pageNo=1&MobileOS=IOS&MobileApp=BootCamping&serviceKey=1L%2BOYunfglS6UkMxXuvlyqHspdv1jlOG1y6KHTwm2iYU6PGtKGH1jv6bORueQEwQBwzbUXzaukBp2mGzabnQ%2Bw%3D%3D&_type=json"
     
     var body: some View {
@@ -94,23 +94,20 @@ struct PlaceView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Text("장소")
+                Text("플레이스")
                     .font(.largeTitle)
                     .bold()
                     .accessibilityAddTraits(.isHeader)
             }
         }
-        .navigationBarItems(trailing: Button {} label: {
-            Image(systemName: "magnifyingglass").foregroundColor(.black)
-        }
-        )
     }
 }
 
-//struct PlaceView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        
-//        PlaceView()
-//            .environmentObject(PlaceStore(places: placeStore.places))
-//    }
-//}
+struct PlaceView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            PlaceView()
+                .environmentObject(PlaceStore())
+        }
+    }
+}
