@@ -8,9 +8,29 @@
 import SwiftUI
 
 struct PhotoCardView: View {
+    var homePhotoCards = ["photoCard1", "photoCard2", "photoCard3", "photoCard3"]
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){
             HStack {
+//                ForEach(homePhotoCards, id: \.self) { photo in
+//                    NavigationLink {
+//                        PhotoDetailView()
+//                    } label: {
+//                        ZStack(alignment: .leading) {
+//                            Image(photo)
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fill)
+//                                .frame(width: 300, height: 600)
+//                                .cornerRadius(20)
+//                        }
+//                        .shadow(radius: 3)
+//                        .padding(.leading, 5)
+//                        .padding(.vertical, 10)
+//                        .padding(.trailing, 10)
+//                    }
+//                }
+                
                 NavigationLink {
                     PhotoDetailView()
                 } label: {

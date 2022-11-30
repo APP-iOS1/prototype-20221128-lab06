@@ -9,84 +9,57 @@ import SwiftUI
 
 struct PhotoCard: View {
     //    @State private var gridOn: Bool
+    
+    @State private var isRectangle: Bool = true
+    @State private var isGrid: Bool = false
+    @State private var isList: Bool = false
+    
     var body: some View {
         VStack{
             HStack{
                 Spacer()
                 Button {
+                    isRectangle = true
+                    isGrid = false
+                    isList = false
                 } label: {
                     Image(systemName: "rectangle.portrait.fill")
-                        .foregroundColor(.indigo)
+                        .foregroundColor(isRectangle ? .indigo : .gray)
                         .font(.title3)
+
                 }
                 
                 Button {
+                    isRectangle = false
+                    isGrid = true
+                    isList = false
                 } label: {
                     Image(systemName: "square.grid.2x2.fill")
-                        .foregroundColor(.gray)
+                        .foregroundColor(isGrid ? .indigo : .gray)
                         .font(.title3)
                 }
                 
                 Button {
+                    isRectangle = false
+                    isGrid = false
+                    isList = true
                 } label: {
                     Image(systemName: "list.bullet")
-                        .foregroundColor(.gray)
+                        .foregroundColor(isGrid ? .indigo : .gray)
                         .font(.title3).bold()
                 }
             }.padding(.trailing)
             
-            //            ScrollView(.horizontal, showsIndicators: false){
-            //                HStack {
-            //                    NavigationLink {
-            //                        PhotoDetailView()
-            //                    } label: {
-            //                        ZStack(alignment: .leading) {
-            //                            Image("photoCard1")
-            //                                .resizable()
-            //                                .aspectRatio(contentMode: .fill)
-            //                                .frame(width: 300, height: 600)
-            //                                .cornerRadius(20)
-            //                            PhotoMainStory()
-            //                                .offset(y: -150)
-            //                        }
-            //                        .shadow(radius: 3)
-            //                        .padding()
-            //                    }
-            //
-            //                    NavigationLink {
-            //                        PhotoDetailView()
-            //                    } label: {
-            //                        ZStack(alignment: .leading) {
-            //                            Image("photoCard2")
-            //                                .resizable()
-            //                                .aspectRatio(contentMode: .fill)
-            //                                .frame(width: 300, height: 600)
-            //                                .cornerRadius(20)
-            //                            PhotoMainStory2()
-            //                                .offset(y: -150)
-            //                        }
-            //                        .shadow(radius: 3)
-            //                    }
-            //
-            //
-            //                    NavigationLink {
-            //                        PhotoDetailView()
-            //                    } label: {
-            //                        ZStack(alignment: .leading) {
-            //                            Image("photoCard3")
-            //                                .resizable()
-            //                                .aspectRatio(contentMode: .fill)
-            //                                .frame(width: 300, height: 600)
-            //                                .cornerRadius(20)
-            //                            PhotoMainStory3()
-            //                                .offset(y: -150)
-            //                        }
-            //                        .shadow(radius: 3)
-            //                        .padding()
-            //                    }
-            //                }
-            //            }
-        PhotoCardView()
+            ZStack {
+                if isRectangle {
+                    PhotoCardView()
+                } else if isGrid {
+                    gridView()
+                } else if isList{
+                    ListView()
+                }
+            }
+
             
         }
         .navigationBarTitleDisplayMode(.inline)

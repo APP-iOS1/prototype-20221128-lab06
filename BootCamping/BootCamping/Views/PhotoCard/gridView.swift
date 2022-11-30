@@ -9,7 +9,7 @@ import SwiftUI
 
 struct gridView: View {
     
-    var photoCards = ["photoCard1", "photoCard2", "photoCard3","photoCard3","photoCard3","photoCard3","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1"]
+    var photoCards = ["photoCard1", "photoCard2", "photoCard3","photoCard3","photoCard3","photoCard3","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard1","photoCard2","photoCard2","photoCard2"]
     
     let columns = [ GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
@@ -20,67 +20,13 @@ struct gridView: View {
                     GridRow{
                         Image(photoCards[index])
                             .resizable()
-                            .frame(width: 120,height: 120)
+                            .frame(width: 140,height: 140)
+                            .padding(.vertical, -4)
                     }
-//                    GridRow{
-//                                    Image(photoCard[0])
-//                                        .resizable()
-//                                        .frame(width: 120,height: 120)
-//                                    Image(photoCard[1])
-//                                        .resizable()
-//                                        .frame(width: 120,height: 120)
-//                                    Image(photoCard[2])
-//                                        .resizable()
-//                                        .frame(width: 120,height: 120)
-//                        Image(photoCard[2])
-//                            .resizable()
-//                            .frame(width: 120,height: 120)
-//                                }
                 }
             }
-            //        Grid{
-            //            ForEach(photoCards, id: \.self) { photocard in
-            //                GridRow {
-            //                    Image("\(photocard)")
-            //                        .resizable()
-            //                        .frame(width: 120,height: 120)
-            //                }
-            //            }
-            //            GridRow{
-            //                Image("photoCard1")
-            //                    .resizable()
-            //                    .frame(width: 120,height: 120)
-            //                Image("photoCard2")
-            //                    .resizable()
-            //                    .frame(width: 120,height: 120)
-            //                Image("photoCard3")
-            //                    .resizable()
-            //                    .frame(width: 120,height: 120)
-            //            }
-            //            GridRow{
-            //                Image("photoCard1")
-            //                    .resizable()
-            //                    .frame(width: 120,height: 120)
-            //                Image("photoCard2")
-            //                    .resizable()
-            //                    .frame(width: 120,height: 120)
-            //                Image("photoCard3")
-            //                    .resizable()
-            //                    .frame(width: 120,height: 120)
-            //            }
-            //            GridRow{
-            //                Image("photoCard1")
-            //                    .resizable()
-            //                    .frame(width: 120,height: 120)
-            //                Image("photoCard2")
-            //                    .resizable()
-            //                    .frame(width: 120,height: 120)
-            //                Image("photoCard3")
-            //                    .resizable()
-            //                    .frame(width: 120,height: 120)
-            //            }
-            //        }
         }
+        .padding(.top, 15)
     }
 }
 
