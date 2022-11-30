@@ -28,7 +28,7 @@ struct HomeCategory: View {
                 VStack {
                     Button {
                         selection = 4
-                        placeStore.selectedCategory = "camping"
+                        placeStore.selectedCategory = "일반야영장"
                         
                     } label: {
                         Image("camping")
@@ -43,9 +43,9 @@ struct HomeCategory: View {
                 VStack {
                     Button {
                         selection = 4
-                        placeStore.selectedCategory = "carbak"
+                        placeStore.selectedCategory = "자동차야영장"
                     } label: {
-                        Image("carbak")
+                        Image("carbak2")
                             .resizable()
                             .frame(width: 50, height: 50)
                             .shadow(radius: 5)
@@ -56,21 +56,21 @@ struct HomeCategory: View {
                 VStack {
                     Button {
                         selection = 4
-                        placeStore.selectedCategory = "backpack"
+                        placeStore.selectedCategory = "카라반"
                     } label: {
-                        Image("backpacking")
+                        Image("carbak")
                             .resizable()
                             .frame(width: 50, height: 50)
                             .shadow(radius: 5)
                     }
-                    Text("백패킹")
+                    Text("카라반")
                     
                 }
                 Spacer()
                 VStack {
                     Button {
                         selection = 4
-                        placeStore.selectedCategory = "glamping"
+                        placeStore.selectedCategory = "글램핑"
                     } label: {
                         Image("glamping")
                             .resizable()

@@ -45,7 +45,7 @@ struct PhotoCard: View {
                     isList = true
                 } label: {
                     Image(systemName: "list.bullet")
-                        .foregroundColor(isGrid ? .indigo : .gray)
+                        .foregroundColor(isList ? .indigo : .gray)
                         .font(.title3).bold()
                 }
             }.padding(.trailing)
@@ -56,8 +56,7 @@ struct PhotoCard: View {
                 } else if isGrid {
                     gridView()
                 } else if isList{
-                    Text("리스트뷰 구현 예정")
-//                    ListView()
+                    ListView(listStore: ListStore())
                 }
             }
 

@@ -49,32 +49,49 @@ struct HomeView: View {
                         HomePhotoCards()
                             .frame(height: 300)
                             .padding(. vertical, 10)
-                        Text("추천 게시판")
-                            .font(.title)
-                            .bold()
-                            .padding(.leading, -185)
-                        //배너 뷰
-                        TabView {
-                            ForEach(images, id: \.self) { item in
-                                Image(item)
-                                    .resizable()
-                                
-                            }
-                        }
-                        .tabViewStyle(PageTabViewStyle())
-                        .frame(width: 400,height: 300)
+                        //                        Text("추천 게시판")
+                        //                            .font(.title)
+                        //                            .bold()
+                        //                            .padding(.leading, -185)
+                        //                        //배너 뷰
+                        //                        TabView {
+                        //                            ForEach(images, id: \.self) { item in
+                        //                                Image(item)
+                        //                                    .resizable()
+                        //
+                        //                            }
+                        //                        }
+                        //                        .tabViewStyle(PageTabViewStyle())
+                        //                        .frame(width: 400,height: 300)
                     }
                 }
                 Spacer()
                 
-                
-                //카테고리
-                HomeCategory(selection: $selection)
-                    .padding(.horizontal, 10)
-                
-                //추천 여행지
-                RecommendHomeView(userNickName: $userNickName)
-                Spacer()
+                VStack {
+                    //카테고리
+                    HomeCategory(selection: $selection)
+                        .padding(.horizontal, 10)
+                    
+                    //추천 여행지
+                    RecommendHomeView(userNickName: $userNickName)
+                    Spacer()
+                    
+                    Text("추천 게시판")
+                        .font(.title)
+                        .bold()
+                        .padding(.leading, -185)
+                        .padding(.top, 30)
+                    //배너 뷰
+                    TabView {
+                        ForEach(images, id: \.self) { item in
+                            Image(item)
+                                .resizable()
+                            
+                        }
+                    }
+                    .tabViewStyle(PageTabViewStyle())
+                    .frame(width: 400,height: 300)
+                }
             }
         }
     }

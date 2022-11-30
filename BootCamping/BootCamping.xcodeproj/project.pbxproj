@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0622F6072924BCBC008BD011 /* TabSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0622F6062924BCBC008BD011 /* TabSelection.swift */; };
+		1A82C97529370E8C00209786 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A82C97429370E8C00209786 /* SearchBar.swift */; };
+		1A82C9772937182400209786 /* ListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A82C9762937182400209786 /* ListStruct.swift */; };
+		1A82C97929371CCF00209786 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A82C97829371CCF00209786 /* ListCell.swift */; };
 		6327BE49292240D4000BA3FF /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327BE48292240D4000BA3FF /* MyPageView.swift */; };
 		6327BE4C292240E0000BA3FF /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327BE4A292240E0000BA3FF /* PlaceView.swift */; };
 		6327BE4D292240E0000BA3FF /* PlaceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327BE4B292240E0000BA3FF /* PlaceCardView.swift */; };
@@ -41,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		0622F6062924BCBC008BD011 /* TabSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSelection.swift; sourceTree = "<group>"; };
+		1A82C97429370E8C00209786 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		1A82C9762937182400209786 /* ListStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStruct.swift; sourceTree = "<group>"; };
+		1A82C97829371CCF00209786 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		6327BE48292240D4000BA3FF /* MyPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		6327BE4A292240E0000BA3FF /* PlaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
 		6327BE4B292240E0000BA3FF /* PlaceCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCardView.swift; sourceTree = "<group>"; };
@@ -85,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A82C96F2936FEA300209786 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1A82C97429370E8C00209786 /* SearchBar.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		6327BE4E292240E8000BA3FF /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +161,7 @@
 			children = (
 				637DEA4A2922009100A16ADB /* BootCampingTabView.swift */,
 				637DEA572922076500A16ADB /* Home */,
+				1A82C96F2936FEA300209786 /* Search */,
 				637DEA5A292207A100A16ADB /* PhotoCard */,
 				63E8521E2922172300842CD8 /* Community */,
 				6327BE4F292240F1000BA3FF /* Place */,
@@ -174,6 +189,8 @@
 				7C78EABD29221AD4002150EE /* PhotoDetailView.swift */,
 				79B611C92924C279001D2E03 /* gridView.swift */,
 				7CC670E9293662360088A798 /* ListView.swift */,
+				1A82C9762937182400209786 /* ListStruct.swift */,
+				1A82C97829371CCF00209786 /* ListCell.swift */,
 				7C41E8A629221C7200E87BC8 /* AddPhotoCard.swift */,
 				7C2EF033292296C9002D286F /* ImagePickerView.swift */,
 			);
@@ -277,11 +294,13 @@
 				7C6760302935BD2500065CF3 /* RecommendHomeView.swift in Sources */,
 				637DEA5D2922098E00A16ADB /* HomeView.swift in Sources */,
 				7C9DE169292280A20010BF13 /* PhotoCardData.swift in Sources */,
+				1A82C97929371CCF00209786 /* ListCell.swift in Sources */,
 				6331F3E82935A75B004F879E /* FetchData.swift in Sources */,
 				63BB56D029221F8400B49B75 /* Places.swift in Sources */,
 				637DEA4B2922009100A16ADB /* BootCampingTabView.swift in Sources */,
 				6327BE5229226D7D000BA3FF /* MyProfileView.swift in Sources */,
 				7C67602E2935BC1C00065CF3 /* HomeCategory.swift in Sources */,
+				1A82C9772937182400209786 /* ListStruct.swift in Sources */,
 				7C2EF034292296C9002D286F /* ImagePickerView.swift in Sources */,
 				79B611CA2924C279001D2E03 /* gridView.swift in Sources */,
 				0622F6072924BCBC008BD011 /* TabSelection.swift in Sources */,
@@ -295,6 +314,7 @@
 				63E852202922359D00842CD8 /* WriteView.swift in Sources */,
 				6327BE49292240D4000BA3FF /* MyPageView.swift in Sources */,
 				6327BE4D292240E0000BA3FF /* PlaceCardView.swift in Sources */,
+				1A82C97529370E8C00209786 /* SearchBar.swift in Sources */,
 				7C6760362935CEEB00065CF3 /* PostCell.swift in Sources */,
 				6327BE4C292240E0000BA3FF /* PlaceView.swift in Sources */,
 				6327BE5429226DC1000BA3FF /* PlaceDetailView.swift in Sources */,
