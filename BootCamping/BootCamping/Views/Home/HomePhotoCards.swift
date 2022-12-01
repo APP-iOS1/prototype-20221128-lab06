@@ -19,28 +19,28 @@ struct HomePhotoCards: View {
                     ZStack {
                         Image(homeImage[index])
                             .resizable()
-                        .frame(width: 180, height: 193)
+                            .frame(width: 180, height: 193)
                         Rectangle()
                             .frame(width: 20,height: 20)
                             .cornerRadius(5)
                             .offset(x:-80,y:-86.5)
                             .opacity(0.6)
-
+                        
                         Text("\(index+1)")
                             .offset(x:-80,y:-86.5)
                             .foregroundColor(.white)
-                            
+                        
                         
                     }
                     
-                        
+                    
                 }
             }
         }
         .padding(.horizontal,10)
     }
-
-    }
+    
+}
 
 
 struct HomePhotoCards_Previews: PreviewProvider {

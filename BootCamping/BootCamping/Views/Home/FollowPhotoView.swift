@@ -16,8 +16,12 @@ struct FollowPhotoView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading){
-                Text("팔로우중인 캠퍼")
-                    .font(.headline)
+                HStack {
+                    Text("팔로우중인 캠퍼")
+                        .font(.headline)
+                    Spacer()
+                    Text("더보기")
+                }
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack{
                         ForEach(camper, id: \.self) { item in
@@ -30,7 +34,7 @@ struct FollowPhotoView: View {
                                     .font(.caption)
                                     .frame(width: 80)
                                     .lineLimit(1)
-
+                                
                             }
                         }
                     }
@@ -42,19 +46,19 @@ struct FollowPhotoView: View {
                     ZStack {
                         Image(homeImage[index])
                             .resizable()
-                        .frame(width: 180, height: 193)
-                            
+                            .frame(width: 180, height: 193)
+                        
                         
                     }
                     
-                        
+                    
                 }
             }
         }
         .padding(.horizontal,10)
     }
-
-    }
+    
+}
 
 struct FollowPhotoView_Previews: PreviewProvider {
     static var previews: some View {

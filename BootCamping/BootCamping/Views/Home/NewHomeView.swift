@@ -18,7 +18,7 @@ struct NewHomeView: View {
     var body: some View {
         VStack{
             animate()
-                        testView(tests: selectedPicker)
+            testView(tests: selectedPicker)
         }
         
     }
@@ -30,7 +30,7 @@ struct NewHomeView: View {
             HStack {
                 Text("부트캠핑")
                     .font(.title.bold())
-                .padding(.leading)
+                    .padding(.leading)
                 Spacer()
                 Button {
                     isSheeting.toggle()
@@ -46,7 +46,7 @@ struct NewHomeView: View {
                         .presentationDragIndicator(.visible)
                 }
             }
-//            .padding(.bottom, -10)
+            //            .padding(.bottom, -10)
             HStack {
                 ForEach(tapInfo.allCases, id: \.self) { item in
                     VStack {
@@ -84,16 +84,16 @@ struct testView : View {
                 HomePhotoCards()
             case .follow:
                 FollowPhotoView()
-           
-                                    }
-                                }
-                            }
-
+                
             }
- 
+        }
+    }
+    
+}
+
 struct NewHomeView_Previews: PreviewProvider {
     static var previews: some View {
-            NewHomeView()
+        NewHomeView()
         
     }
 }
