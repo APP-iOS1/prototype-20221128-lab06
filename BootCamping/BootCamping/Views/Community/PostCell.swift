@@ -16,26 +16,29 @@ struct PostCell: View {
                 Text("#\(post.outdoor)")
                 Text("#\(post.category)")
             }
-            .font(.callout)
+            .font(.subheadline)
             .foregroundColor(.accentColor)
             
-            Text(post.content).font(.title3)
-            Text(post.userName).font(.callout).foregroundColor(.gray)
+            Text(post.content).font(.headline)
+            Text(post.userName).font(.subheadline).foregroundColor(.gray)
             Divider()
             HStack {
-                Text(post.date).font(.callout)
+                Text(post.date).font(.subheadline)
                 Spacer()
                 Group {
                     Image(systemName: "hand.thumbsup")
-                    Text("\(post.likes)")
+                    Text("\(post.likes)").font(.subheadline)
                     Image(systemName: "ellipsis.message")
-                    Text("\(post.commentsCount)")
-                }.foregroundColor(.accentColor)
+                    Text("\(post.commentsCount)").font(.subheadline)
+                }
             }
         }
         .padding()
-        .background(.white)
-        .cornerRadius(10)
+        .background(
+        RoundedRectangle(cornerRadius: 20)
+            .foregroundColor(.white)
+            .shadow(radius: 3)
+        )
         .padding(.top, 10)
     }
 }

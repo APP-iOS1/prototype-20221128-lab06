@@ -96,7 +96,7 @@ struct FilteringView: View {
                         }
                     }
                 }
-            }
+            }.font(.subheadline)
             
             GridRow {
                 Text("글 종류")
@@ -184,9 +184,9 @@ struct FilteringView: View {
                         }
                     }
                 }
-            }
+            }.font(.subheadline)
         }
-        .foregroundColor(.black)
+//        .foregroundColor(.black)
     }
 }
 

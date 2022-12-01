@@ -35,4 +35,5 @@ class PostStore: ObservableObject {
         
         postData.insert(newPost, at: 0)
     }
+
 }

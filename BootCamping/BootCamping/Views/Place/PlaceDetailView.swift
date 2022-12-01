@@ -47,7 +47,8 @@ struct PlaceDetailView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     
                     Group {
-                        Text("#\(places.induty)").foregroundColor(.accentColor)
+                        Text("#\(places.induty)")
+                            .font(.subheadline)
                         
                         Text("\(filterName)")
                             .font(.title)
@@ -89,13 +90,17 @@ struct PlaceDetailView: View {
                     }
                     Spacer()
                     Divider()
-                    Map(coordinateRegion: $region, annotationItems: annotatedItem) { item in
-                        MapMarker(coordinate: item.coordinate, tint: .blue)
+                    Group {
+                        Text("위치 보기")
+                            .font(.callout)
+                            .bold()
+                        Map(coordinateRegion: $region, annotationItems: annotatedItem) { item in
+                            MapMarker(coordinate: item.coordinate, tint: .blue)
+                        }
+                        .frame(width: 330, height: 250)
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
                     }
-                    .frame(width: 350, height: 250)
-                    .cornerRadius(10)
-                    .padding(.horizontal, 20)
-                    
                     Divider()
                     Group {
                         Text("리뷰 모아보기").font(.callout).bold()
@@ -105,12 +110,11 @@ struct PlaceDetailView: View {
                             VStack(alignment: . center) {
                                 Text("현재 작성된 리뷰가 없어요.")
                                 Text("첫 리뷰의 주인공이 되어보시는건 어떨까요?\n")
-                            }.foregroundColor(.gray).font(.callout)
+                            }.foregroundColor(.secondary).font(.subheadline)
                             Spacer()
                         }
                     }
-                }
-                .padding(.horizontal, 25)
+                }.padding(.horizontal, 25)
             }.ignoresSafeArea(.all, edges: .top)
                 .onAppear {
                     region.center = CLLocationCoordinate2D(latitude: Double(places.mapY)!, longitude: Double(places.mapX)!)

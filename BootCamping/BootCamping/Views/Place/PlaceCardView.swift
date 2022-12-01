@@ -69,10 +69,11 @@ struct PlaceCardView: View {
         .padding()
         .background(
         RoundedRectangle(cornerRadius: 20)
+            .foregroundColor(.white)
             .frame(height: 250)
+            .shadow(radius: 3)
         )
         .padding(.top, 10)
-        .shadow(radius: 5)
         
     }
 }
