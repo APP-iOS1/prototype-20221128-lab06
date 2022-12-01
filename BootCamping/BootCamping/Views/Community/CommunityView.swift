@@ -21,7 +21,6 @@ struct CommunityView: View {
                         .padding(.horizontal, 11)
                 }
             }
-            .background(Color(hue: 0.503, saturation: 0.0, brightness: 0.909))
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
