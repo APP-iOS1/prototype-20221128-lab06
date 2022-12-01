@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct BootCampingTabView: View {
-    @State var text: String = ""
+    @State var text: String = " "
     @State private var selection: Int = 1
+    @Binding var userNickName: String
     
     var body: some View {
         TabView (selection: $selection) {
@@ -21,7 +22,7 @@ struct BootCampingTabView: View {
             }.tag(1)
             
             NavigationStack {
-                SearchBar(text: $text)
+                SearchBar(text: $text, userNickName: $userNickName, selection: $selection)
             }.tabItem {
                 Image(systemName: "location.magnifyingglass")
                 Text("검색")
@@ -60,6 +61,6 @@ struct BootCampingTabView: View {
 
 struct BootCampingTabView_Previews: PreviewProvider {
     static var previews: some View {
-        BootCampingTabView()
+        BootCampingTabView(userNickName: .constant("멋사"))
     }
 }
