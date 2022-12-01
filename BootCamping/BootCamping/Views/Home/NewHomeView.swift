@@ -5,10 +5,12 @@
 //  Created by 차소민 on 2022/12/01.
 //
 
+//문제점: top10에서 스크롤 내리면 팔로잉에서도 같이 내려가있음
+
 import SwiftUI
 
 enum tapInfo : String, CaseIterable {
-    case top = "인기"
+    case top = "Top 10"
     case follow = "팔로잉"
 }
 
