@@ -12,12 +12,15 @@ struct SearchBar: View {
     
     @State private var isEditing = false
     
+    @Binding var userNickName: String
+    
+    @Binding var selection: Int
+    
     var body: some View {
         
         VStack {
-            
+            //검색 탭
             HStack {
-                
                 TextField("Search ...", text: $text)
                     .padding(7)
                     .padding(.horizontal, 25)
@@ -60,7 +63,8 @@ struct SearchBar: View {
                 }
             }
             .padding(.top, 20)
-            Spacer()
+            
+            SearchView(isEditing: $isEditing, userNickName: $userNickName, selection: $selection)
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -76,6 +80,6 @@ struct SearchBar: View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(text: .constant(""))
+        SearchBar(text: .constant(""), userNickName: .constant("멋사"), selection: .constant(4))
     }
 }

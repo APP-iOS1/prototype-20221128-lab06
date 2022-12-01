@@ -8,68 +8,54 @@
 import SwiftUI
 
 struct HomePhotoCards: View {
+    var homeImage = ["photoCard1", "photoCard2", "photoCard3", "1", "2", "3","4","5","6","7"]
+    let images = ["car", "back", "camp", "gl"]
+
+    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+    
     var body: some View {
-                var homePhotoCards = ["photoCard1", "photoCard2", "photoCard3", "1", "2", "3"]
-        
-//        var homePhotoCards = [String]()
-        
-        ScrollView(.horizontal, showsIndicators: false){
-            ZStack {
-                HStack {
-                    if homePhotoCards.isEmpty {
-                        HStack {
-                            Rectangle()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 150, height: 300)
-                                .cornerRadius(20)
-                                .foregroundColor(.secondary)
-                                .opacity(0.3)
-                                .overlay {
-                                    NavigationLink {
-                                        AddPhotoCard()
-                                    } label: {
-                                        Image(systemName: "plus.circle").font(.largeTitle)
-                                            .opacity(0.5)
-                                    }
-                                }
-                                .padding(.leading, 20)
-                            
-                            
-                            
-                            Text("당신의 \n추억을 \n채워보세요")
-                                .font(.title2)
-                                .bold()
-                                .opacity(0.5)
-                                .padding(.leading, 30)
-                        }
-                    }
-                    
-                    else {
-                        HStack {
-                            ForEach(homePhotoCards, id: \.self) { photo in
-                                NavigationLink {
-                                    PhotoDetailView()
-                                } label: {
-                                    ZStack(alignment: .leading) {
-                                        Image(photo)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .frame(width: 150, height: 300)
-                                            .cornerRadius(20)
-                                    }
-                                    .shadow(radius: 3)
-                                    .padding(.leading, 3)
-                                    .padding(.vertical, 10)
-                                    .padding(.trailing, 3)
-                                }
-                            }
-                        }
+        ScrollView {
+            
+            LazyVGrid(columns: columns) {
+                ForEach(0..<homeImage.count, id: \.self) { index in
+                    ZStack {
+                        Image(homeImage[index])
+                            .resizable()
+                            .frame(width: 198, height: 198)
+                            .padding(.bottom, -5)
+                        Rectangle()
+                            .frame(width: 20,height: 20)
+                            .cornerRadius(5)
+                            .offset(x:-89,y:-86.5)
+                            .opacity(0.6)
+                        
+                        Text("\(index+1)")
+                            .offset(x:-89,y:-86.5)
+                            .foregroundColor(.white)
                     }
                 }
+            }   //LazyVGrid
+
+            .padding(.bottom)
+            
+            // 광고배너
+            HStack {
+                Spacer()
             }
+            TabView {
+                ForEach(images, id: \.self) { item in
+                    Image(item)
+                        .resizable()
+                }
+            }
+            .tabViewStyle(PageTabViewStyle())
+            .frame(width: 400,height: 250)
         }
+        
     }
+    
 }
+
 
 struct HomePhotoCards_Previews: PreviewProvider {
     static var previews: some View {

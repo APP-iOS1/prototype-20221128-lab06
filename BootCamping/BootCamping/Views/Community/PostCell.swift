@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PostCell: View {
     var post: Post
+    @Environment(\.colorScheme) var scheme
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -16,26 +17,28 @@ struct PostCell: View {
                 Text("#\(post.outdoor)")
                 Text("#\(post.category)")
             }
-            .font(.callout)
-            .foregroundColor(.accentColor)
+            .font(.subheadline)
             
-            Text(post.content).font(.title3)
-            Text(post.userName).font(.callout).foregroundColor(.gray)
+            Text(post.content).font(.headline)
+            Text(post.userName).font(.subheadline).foregroundColor(.gray)
             Divider()
             HStack {
-                Text(post.date).font(.callout)
+                Text(post.date).font(.subheadline)
                 Spacer()
                 Group {
                     Image(systemName: "hand.thumbsup")
                     Text("\(post.likes)")
                     Image(systemName: "ellipsis.message")
                     Text("\(post.commentsCount)")
-                }.foregroundColor(.accentColor)
+                }.font(.subheadline)
             }
         }
         .padding()
-        .background(.white)
-        .cornerRadius(10)
+        .background(
+        RoundedRectangle(cornerRadius: 20)
+            .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
+            .shadow(radius: 3)
+        )
         .padding(.top, 10)
     }
 }

@@ -13,16 +13,16 @@ struct RecommendHomeView: View {
     var body: some View {
         Group {     //추천여행지
             VStack{
-                HStack{
-                    Text("\(userNickName) 님, ")
-                        .font(.title)
-                        .bold()
-                        .padding(.leading)
-                    Spacer()
-                }
+//                HStack{
+//                    Text("\(userNickName) 님, ")
+//                        .font(.title2)
+//                        .bold()
+//                        .padding(.leading)
+//                    Spacer()
+//                }
                 HStack {
-                    Text("이번엔 어디로 떠나볼까요?")
-                        .font(.title)
+                    Text("장소별 검색")
+                        .font(.title2)
                         .bold()
                         .padding(.leading)
                     Spacer()
@@ -40,11 +40,11 @@ struct RecommendHomeView: View {
                         ZStack {
                             Image(travleImages[idx])
                                 .resizable()
-                                .frame(width: 95, height: 95)
+                                .frame(width: 80, height: 80)
                                 .clipShape(Circle())
                             
                             Text(travlenames[idx])
-                                .font(.title3)
+                                .font(.headline)
                                 .bold()
                                 .foregroundColor(.white)
                         }

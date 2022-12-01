@@ -9,11 +9,13 @@ import SwiftUI
 
 struct PlaceView: View {
     
+    @Environment(\.colorScheme) var scheme
     @EnvironmentObject var placeStore: PlaceStore
     var fecthData: FetchData = FetchData()
     
     @State var page: Int = 1
     @State private var isLoading: Bool = false
+    
     
     //    let url: String = "https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=15&pageNo=1&MobileOS=IOS&MobileApp=BootCamping&serviceKey=1L%2BOYunfglS6UkMxXuvlyqHspdv1jlOG1y6KHTwm2iYU6PGtKGH1jv6bORueQEwQBwzbUXzaukBp2mGzabnQ%2Bw%3D%3D&_type=json"
     
@@ -21,38 +23,38 @@ struct PlaceView: View {
         VStack {
             HStack {
                 Button { placeStore.selectedCategory = "all" } label: {
-                    Text("#전체보기").padding(7)
+                    Text("#전체보기").padding(7).font(.subheadline)
                 }
-                .foregroundColor(placeStore.selectedCategory == "all" ? .white : .black)
-                .background(placeStore.selectedCategory == "all" ? Color.accentColor : .white)
+                .foregroundColor(placeStore.selectedCategory == "all" ? Theme.myBackgroundColor(forScheme: scheme) : Color.accentColor)
+                .background(placeStore.selectedCategory == "all" ? Color.accentColor : Theme.myBackgroundColor(forScheme: scheme))
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "일반야영장" } label: {
-                    Text("#캠핑").padding(7)
+                    Text("#캠핑").padding(7).font(.subheadline)
                 }
-                .foregroundColor(placeStore.selectedCategory == "일반야영장" ? .white : .black)
-                .background(placeStore.selectedCategory == "일반야영장" ? Color.accentColor : .white)
+                .foregroundColor(placeStore.selectedCategory == "일반야영장" ? Theme.myBackgroundColor(forScheme: scheme) : Color.accentColor)
+                .background(placeStore.selectedCategory == "일반야영장" ? Color.accentColor : Theme.myBackgroundColor(forScheme: scheme))
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "자동차야영장" } label: {
-                    Text("#차박").padding(5)
+                    Text("#차박").padding(7).font(.subheadline)
                 }
-                .foregroundColor(placeStore.selectedCategory == "자동차야영장" ? .white : .black)
-                .background(placeStore.selectedCategory == "자동차야영장" ? Color.accentColor : .white)
+                .foregroundColor(placeStore.selectedCategory == "자동차야영장" ? Theme.myBackgroundColor(forScheme: scheme) : Color.accentColor)
+                .background(placeStore.selectedCategory == "자동차야영장" ? Color.accentColor : Theme.myBackgroundColor(forScheme: scheme))
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "카라반" } label: {
-                    Text("#카라반").padding(7)
+                    Text("#카라반").padding(7).font(.subheadline)
                 }
-                .foregroundColor(placeStore.selectedCategory == "카라반" ? .white : .black)
-                .background(placeStore.selectedCategory == "카라반" ? Color.accentColor : .white)
+                .foregroundColor(placeStore.selectedCategory == "카라반" ? Theme.myBackgroundColor(forScheme: scheme) : Color.accentColor)
+                .background(placeStore.selectedCategory == "카라반" ? Color.accentColor : Theme.myBackgroundColor(forScheme: scheme))
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "글램핑" } label: {
-                    Text("#글램핑").padding(7)
+                    Text("#글램핑").padding(7).font(.subheadline)
                 }
-                .foregroundColor(placeStore.selectedCategory == "글램핑" ? .white : .black)
-                .background(placeStore.selectedCategory == "글램핑" ? Color.accentColor : .white)
+                .foregroundColor(placeStore.selectedCategory == "글램핑" ? Theme.myBackgroundColor(forScheme: scheme) : Color.accentColor)
+                .background(placeStore.selectedCategory == "글램핑" ? Color.accentColor : Theme.myBackgroundColor(forScheme: scheme))
                 .cornerRadius(10)
             }
             .padding(.vertical)
@@ -88,7 +90,7 @@ struct PlaceView: View {
                     placeStore.places.append(contentsOf: try await fecthData.fetchData(page: page))
                 }
             }
-            .background(Color(hue: 0.503, saturation: 0.0, brightness: 0.909))
+//            .background(Color(hue: 0.503, saturation: 0.0, brightness: 0.909))
         }
         
         .navigationBarTitleDisplayMode(.inline)

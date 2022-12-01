@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FilteringView: View {
+    
+    @Environment(\.colorScheme) var scheme
     @State private var isOutdoorAll: Bool = true
     @State private var isOutdoorCamping: Bool = false
     @State private var isOutdoorCarsleeping: Bool = false
@@ -29,7 +31,7 @@ struct FilteringView: View {
                     HStack{
                         if isOutdoorAll {
                             Button("전체", action: { self.isOutdoorAll = false })
-                                .foregroundColor(.white)
+                                .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
                                 .buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
                         } else {
@@ -45,7 +47,7 @@ struct FilteringView: View {
                         
                         if isOutdoorCamping {
                             Button("캠핑", action: { self.isOutdoorCamping = false })
-                                .foregroundColor(.white)
+                                .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
                                 .buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
                         } else {
@@ -58,7 +60,7 @@ struct FilteringView: View {
                         
                         if isOutdoorCarsleeping {
                             Button("차박", action: { self.isOutdoorCarsleeping = false })
-                                .foregroundColor(.white)
+                                .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
                                 .buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
                         } else {
@@ -71,7 +73,7 @@ struct FilteringView: View {
                         
                         if isOutdoorGlamping {
                             Button("글램핑", action: { self.isOutdoorGlamping = false })
-                                .foregroundColor(.white)
+                                .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
                                 .buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
                         } else {
@@ -84,7 +86,7 @@ struct FilteringView: View {
                         
                         if isOutdoorBackpacking {
                             Button("백패킹", action: { self.isOutdoorBackpacking = false })
-                                .foregroundColor(.white)
+                                .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
                                 .buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
                         } else {
@@ -96,7 +98,7 @@ struct FilteringView: View {
                         }
                     }
                 }
-            }
+            }.font(.subheadline)
             
             GridRow {
                 Text("글 종류")
@@ -105,7 +107,7 @@ struct FilteringView: View {
                     HStack {
                         if isCategoryAll {
                             Button("전체", action: { self.isCategoryAll = false })
-                                .foregroundColor(.white)
+                                .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
                                 .buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
                         } else {
@@ -120,7 +122,7 @@ struct FilteringView: View {
                         
                         if isCategoryFree {
                             Button("자유", action: { self.isCategoryFree = false })
-                                .foregroundColor(.white)
+                                .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
                                 .buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
                         } else {
@@ -133,7 +135,7 @@ struct FilteringView: View {
                         
                         if isCategoryQuestion {
                             Button("질문", action: { self.isCategoryQuestion = false })
-                                .foregroundColor(.white)
+                                .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
                                 .buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
                         } else {
@@ -146,7 +148,7 @@ struct FilteringView: View {
                         
                         if isCategoryTip {
                             Button("캠핑팁", action: { self.isCategoryTip = false })
-                                .foregroundColor(.white)
+                                .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
                                 .buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
                         } else {
@@ -159,7 +161,7 @@ struct FilteringView: View {
                         
                         if isCategoryMarket {
                             Button("중고거래", action: { self.isCategoryMarket = false })
-                                .foregroundColor(.white)
+                                .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
                                 .buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
                         } else {
@@ -172,7 +174,7 @@ struct FilteringView: View {
                         
                         if isCategoryAccompany {
                             Button("동행", action: { self.isCategoryAccompany = false })
-                                .foregroundColor(.white)
+                                .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
                                 .buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
                         } else {
@@ -184,9 +186,9 @@ struct FilteringView: View {
                         }
                     }
                 }
-            }
+            }.font(.subheadline)
         }
-        .foregroundColor(.black)
+//        .foregroundColor(.black)
     }
 }
 

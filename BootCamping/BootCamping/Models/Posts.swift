@@ -31,8 +31,9 @@ class PostStore: ObservableObject {
     ]
     
     func addPosts(outdoor: String, category: String, content: String) {
-        let newPost = Post(outdoor: outdoor, category: category, content: content, userName: "thekoon", date: "2022.11.29", likes: 0, commentsCount: 0)
-        
-        postData.insert(newPost, at: 0)
+        if outdoor != "" && content != "" {
+            let newPost = Post(outdoor: outdoor, category: category, content: content, userName: "thekoon", date: "2022.11.29", likes: 0, commentsCount: 0)
+            postData.insert(newPost, at: 0)
+        }
     }
 }

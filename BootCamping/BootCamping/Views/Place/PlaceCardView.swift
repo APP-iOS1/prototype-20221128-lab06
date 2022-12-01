@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlaceCardView: View {
     
+    @Environment(\.colorScheme) var scheme
     var places: Item
     
     var body: some View {
@@ -17,11 +18,10 @@ struct PlaceCardView: View {
                 Text("\(String(Array(places.facltNm).filter { !"(주)".contains($0) }))")
                     .font(.title2)
                     .kerning(-0.5)
-                    .foregroundColor(.black)
                 Spacer()
                 Image(systemName: "bookmark")
                     .font(.body)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                     .padding(.trailing, 3)
             }
             Text("\(Image(systemName: "star.fill")) 5.0점 (후기 4개)")
@@ -30,7 +30,7 @@ struct PlaceCardView: View {
             HStack {
                 Text("\(Image(systemName: "mappin.circle.fill")) \(places.addr1)")
                     .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                     .lineLimit(1)
             }
             HStack {
@@ -56,7 +56,6 @@ struct PlaceCardView: View {
             if places.intro == "" {
                 Text("정보 없음")
                     .lineSpacing(7)
-                    .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
 
@@ -64,16 +63,19 @@ struct PlaceCardView: View {
                 Text("\(places.intro)")
                     .font(.subheadline)
                     .lineSpacing(7)
-                    .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
             }
         }
         .padding()
-        .background(Color(.white))
-        .frame(height: 250)
-        .cornerRadius(10)
+        .background(
+        RoundedRectangle(cornerRadius: 20)
+            .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
+            .frame(height: 250)
+            .shadow(radius: 3)
+        )
         .padding(.top, 10)
+        
     }
 }
 
