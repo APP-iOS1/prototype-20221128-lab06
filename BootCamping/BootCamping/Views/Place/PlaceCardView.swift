@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlaceCardView: View {
     
+    @Environment(\.colorScheme) var scheme
     var places: Item
     
     var body: some View {
@@ -69,7 +70,7 @@ struct PlaceCardView: View {
         .padding()
         .background(
         RoundedRectangle(cornerRadius: 20)
-            .foregroundColor(.white)
+            .foregroundColor(Theme.myBackgroundColor(forScheme: scheme))
             .frame(height: 250)
             .shadow(radius: 3)
         )

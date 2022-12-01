@@ -17,8 +17,12 @@ struct CommunityView: View {
                 .padding()
             ScrollView {
                 ForEach (postStore.postData) { post in
-                    PostCell(post: post)
-                        .padding(.horizontal, 11)
+                    NavigationLink {
+                        CommunityDetailView(postStore: postStore, posts: post)
+                    } label: {
+                        PostCell(post: post)
+                            .padding(.horizontal, 11)
+                    }
                 }
             }
         }

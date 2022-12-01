@@ -14,48 +14,54 @@ struct FollowPhotoView: View {
     var camper = ["_chasomin","chohh02","JJ_ang","outdoorlife.prim","thekoon_","bestagrammm"]
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading){
-                HStack {
-                    Text("팔로우중인 캠퍼")
-                        .font(.headline)
-                    Spacer()
-                    Text("더보기")
-                }
-                ScrollView(.horizontal, showsIndicators: false){
-                    HStack{
-                        ForEach(camper, id: \.self) { item in
-                            VStack{
-                                Image(item)
-                                    .resizable()
-                                    .frame(width: 80,height: 80)
-                                    .cornerRadius(50)
-                                Text(item)
-                                    .font(.caption)
-                                    .frame(width: 80)
-                                    .lineLimit(1)
-                                
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading){
+                    HStack {
+                        Text("팔로우중인 캠퍼")
+                            .font(.headline)
+                            .padding(.leading)
+                        Spacer()
+                        NavigationLink(destination: FollowListView()) {
+                            Text("더보기")
+                                .padding(.trailing)
+                        }
+                    }
+                    ScrollView(.horizontal, showsIndicators: false){
+                        HStack{
+                            ForEach(camper, id: \.self) { item in
+                                VStack{
+                                    Image(item)
+                                        .resizable()
+                                        .frame(width: 80,height: 80)
+                                        .cornerRadius(50)
+                                    Text(item)
+                                        .font(.caption)
+                                        .frame(width: 80)
+                                        .lineLimit(1)
+                                    
+                                }
                             }
                         }
                     }
+                    .padding(.bottom,10)
                 }
-                .padding(.bottom,10)
-            }
-            LazyVGrid(columns: columns) {
-                ForEach(0..<homeImage.count, id: \.self) { index in
-                    ZStack {
-                        Image(homeImage[index])
-                            .resizable()
-                            .frame(width: 180, height: 193)
+                LazyVGrid(columns: columns) {
+                    ForEach(0..<homeImage.count, id: \.self) { index in
+                        ZStack {
+                            Image(homeImage[index])
+                                .resizable()
+                                .frame(width: 198, height: 198)
+                                .padding(.bottom, -5)
+                            
+                            
+                        }
                         
                         
                     }
-                    
-                    
                 }
             }
         }
-        .padding(.horizontal,10)
     }
     
 }
