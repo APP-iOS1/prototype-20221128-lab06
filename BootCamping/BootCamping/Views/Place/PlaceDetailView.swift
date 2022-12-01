@@ -20,9 +20,9 @@ struct PlaceDetailView: View {
     var places: Item
     @State var isSeleted: Bool = false
     
-    @State private var annotatedItem: [AnnotatedItem] = []
     @State private var isFavorite: Bool = false
-    @State private var region: MKCoordinateRegion = MKCoordinateRegion(
+    @State var annotatedItem: [AnnotatedItem] = []
+    @State var region: MKCoordinateRegion = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 37.5, longitude: 126.9),
         span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     )
@@ -76,7 +76,7 @@ struct PlaceDetailView: View {
                         }
                         .padding(.bottom, 20)
                         
-                        Text("\(places.lineIntro)").lineSpacing(7).font(.subheadline)
+                        Text("\(places.intro)").lineSpacing(7).font(.subheadline)
                         
                     }
                     Spacer()
@@ -94,12 +94,19 @@ struct PlaceDetailView: View {
                         Text("위치 보기")
                             .font(.callout)
                             .bold()
-                        Map(coordinateRegion: $region, annotationItems: annotatedItem) { item in
-                            MapMarker(coordinate: item.coordinate, tint: .blue)
+                        NavigationLink {
+                            FullMapView(annotatedItem: annotatedItem, region: region, places: places)
+                        } label: {
+                            Map(coordinateRegion: $region, interactionModes: [], annotationItems: annotatedItem) { item in
+                                MapMarker(coordinate: item.coordinate, tint: .blue)
+                            }
+                            .frame(width: 330, height: 250)
+                            .cornerRadius(10)
+                            .padding(.horizontal, 20)
                         }
-                        .frame(width: 330, height: 250)
-                        .cornerRadius(10)
-                        .padding(.horizontal, 20)
+                        Text("클릭해서 확대")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
                     }
                     Divider()
                     Group {

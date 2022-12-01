@@ -60,7 +60,7 @@ struct PlaceCardView: View {
                     .lineLimit(2)
 
             } else {
-                Text("\(places.intro)")
+                Text("\(places.lineIntro)")
                     .font(.subheadline)
                     .lineSpacing(7)
                     .multilineTextAlignment(.leading)
@@ -74,7 +74,7 @@ struct PlaceCardView: View {
             .frame(height: 250)
             .shadow(radius: 3)
         )
-        .padding(.top, 10)
+        .padding(.vertical, 10)
         
     }
 }

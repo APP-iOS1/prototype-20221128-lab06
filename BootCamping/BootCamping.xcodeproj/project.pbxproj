@@ -19,6 +19,7 @@
 		6331F3E82935A75B004F879E /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331F3E72935A75B004F879E /* FetchData.swift */; };
 		6352F45929388E30009A1872 /* CommunityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6352F45829388E30009A1872 /* CommunityDetailView.swift */; };
 		6352F45B29388F20009A1872 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6352F45A29388F20009A1872 /* Theme.swift */; };
+		6352F45F2938E8F0009A1872 /* FullMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6352F45E2938E8F0009A1872 /* FullMapView.swift */; };
 		637DEA492922009100A16ADB /* BootCampingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DEA482922009100A16ADB /* BootCampingApp.swift */; };
 		637DEA4B2922009100A16ADB /* BootCampingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DEA4A2922009100A16ADB /* BootCampingTabView.swift */; };
 		637DEA4D2922009300A16ADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637DEA4C2922009300A16ADB /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		6331F3E92935E084004F879E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6352F45829388E30009A1872 /* CommunityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailView.swift; sourceTree = "<group>"; };
 		6352F45A29388F20009A1872 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		6352F45E2938E8F0009A1872 /* FullMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMapView.swift; sourceTree = "<group>"; };
 		637DEA452922009100A16ADB /* BootCamping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BootCamping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		637DEA482922009100A16ADB /* BootCampingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootCampingApp.swift; sourceTree = "<group>"; };
 		637DEA4A2922009100A16ADB /* BootCampingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootCampingTabView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				6327BE4A292240E0000BA3FF /* PlaceView.swift */,
 				6327BE4B292240E0000BA3FF /* PlaceCardView.swift */,
 				6327BE5329226DC1000BA3FF /* PlaceDetailView.swift */,
+				6352F45E2938E8F0009A1872 /* FullMapView.swift */,
 				63BA9A0E29387A7C006D98C7 /* SafariView.swift */,
 			);
 			path = Place;
@@ -226,6 +229,7 @@
 				1A82C9762937182400209786 /* ListStruct.swift */,
 				1A82C97829371CCF00209786 /* ListCell.swift */,
 				7C41E8A629221C7200E87BC8 /* AddPhotoCard.swift */,
+				7C6760352935CEEB00065CF3 /* PostCell.swift */,
 				7C2EF033292296C9002D286F /* ImagePickerView.swift */,
 			);
 			path = PhotoCard;
@@ -250,7 +254,6 @@
 				63E8521C2922170A00842CD8 /* CommunityView.swift */,
 				7C6760332935CE8000065CF3 /* FilteringView.swift */,
 				63E8521F2922359D00842CD8 /* WriteView.swift */,
-				7C6760352935CEEB00065CF3 /* PostCell.swift */,
 				6352F45829388E30009A1872 /* CommunityDetailView.swift */,
 			);
 			path = Community;
@@ -368,6 +371,7 @@
 				7C7B5F4C2938825B00E45B3B /* SearchingView.swift in Sources */,
 				79442CB32938733E0014804D /* NewHomeView.swift in Sources */,
 				63E8521D2922170A00842CD8 /* CommunityView.swift in Sources */,
+				6352F45F2938E8F0009A1872 /* FullMapView.swift in Sources */,
 				637DEA492922009100A16ADB /* BootCampingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

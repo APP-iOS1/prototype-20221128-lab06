@@ -70,7 +70,7 @@ struct AddPhotoCard: View {
     func addNewPhotoCard() {
         let newPhotoCard = PhotoCardData(title: "name", story: "story")
         
-//        PhotoCardList.placesList.append(newPhotoCard)
+        placesList.append(newPhotoCard)
         
         dismiss()
     }

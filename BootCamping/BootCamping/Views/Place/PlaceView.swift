@@ -72,7 +72,6 @@ struct PlaceView: View {
                                 Task {
                                     page += 1
                                     isLoading = true
-                                    try await Task.sleep(until: .now + .seconds(1), clock: .continuous)
                                     placeStore.places.append(contentsOf: try await fecthData.fetchData(page: page))
                                     isLoading = false
                                 }
