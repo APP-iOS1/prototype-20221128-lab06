@@ -32,7 +32,7 @@ struct HomeView: View {
                                 isSheeting.toggle()
                             } label: {
                                 Image(systemName: "person.fill")
-                                    .foregroundColor(.indigo)
+                                    .foregroundColor(.accentColor)
                                     .font(.title)
                             }
                             .padding(.top, 9)

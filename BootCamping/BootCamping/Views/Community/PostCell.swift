@@ -17,7 +17,7 @@ struct PostCell: View {
                 Text("#\(post.category)")
             }
             .font(.callout)
-            .foregroundColor(.indigo)
+            .foregroundColor(.accentColor)
             
             Text(post.content).font(.title3)
             Text(post.userName).font(.callout).foregroundColor(.gray)
@@ -30,7 +30,7 @@ struct PostCell: View {
                     Text("\(post.likes)")
                     Image(systemName: "ellipsis.message")
                     Text("\(post.commentsCount)")
-                }.foregroundColor(.indigo)
+                }.foregroundColor(.accentColor)
             }
         }
         .padding()

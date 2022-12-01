@@ -30,7 +30,7 @@ struct PlaceDetailView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     
                     Group {
-                        Text("#글램핑").foregroundColor(.indigo)
+                        Text("#글램핑").foregroundColor(.accentColor)
                         
                         Text("\(String(Array(places.facltNm).filter { !"(주)".contains($0) }))")
                             .font(.title)
@@ -49,7 +49,7 @@ struct PlaceDetailView: View {
                             NavigationLink { Text("MapView 지원 예정...\ncoming soon") } label: {
                                 Text("\(Image(systemName: "map.fill")) 위치 보기")
                                     .font(.footnote)
-                                    .foregroundColor(.indigo)
+                                    .foregroundColor(.accentColor)
                             }
                         }
                         .padding(.bottom, 20)
@@ -90,7 +90,7 @@ struct PlaceDetailView: View {
                     Text("예약\n하기")
                         .foregroundColor(.white)
                         .padding()
-                        .background(.indigo)
+                        .background(Color.accentColor)
                         .clipShape(Circle())
                 }
             }.offset(x: 140, y: 280)

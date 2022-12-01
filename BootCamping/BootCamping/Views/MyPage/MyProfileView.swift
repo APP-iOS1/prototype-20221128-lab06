@@ -56,7 +56,7 @@ struct LoginButton: View {
                 .foregroundColor(.white)
                 .padding()
         }
-        .background(.indigo)
+        .background(Color(accentColor as! CGColor))
         .cornerRadius(20)
         .frame(height: 150)
     }

@@ -41,7 +41,7 @@ struct WriteView: View {
                 
                 Divider()
                 TextEditor(text: $textContent)
-                    .border(.indigo)
+                    .border(Color.accentColor)
             }
             .navigationBarTitle(Text("글쓰기"), displayMode: .inline)
             .navigationBarItems(trailing: Button("완료", action: {

@@ -31,7 +31,7 @@ struct FilteringView: View {
                             Button("전체", action: { self.isOutdoorAll = false })
                                 .foregroundColor(.white)
                                 .buttonStyle(.borderedProminent)
-                                .tint(.indigo)
+                                .tint(.accentColor)
                         } else {
                             Button("전체", action: {
                                 self.isOutdoorAll = true
@@ -47,7 +47,7 @@ struct FilteringView: View {
                             Button("캠핑", action: { self.isOutdoorCamping = false })
                                 .foregroundColor(.white)
                                 .buttonStyle(.borderedProminent)
-                                .tint(.indigo)
+                                .tint(.accentColor)
                         } else {
                             Button("캠핑", action: {
                                 self.isOutdoorCamping = true
@@ -60,7 +60,7 @@ struct FilteringView: View {
                             Button("차박", action: { self.isOutdoorCarsleeping = false })
                                 .foregroundColor(.white)
                                 .buttonStyle(.borderedProminent)
-                                .tint(.indigo)
+                                .tint(.accentColor)
                         } else {
                             Button("차박", action: {
                                 self.isOutdoorCarsleeping = true
@@ -73,7 +73,7 @@ struct FilteringView: View {
                             Button("글램핑", action: { self.isOutdoorGlamping = false })
                                 .foregroundColor(.white)
                                 .buttonStyle(.borderedProminent)
-                                .tint(.indigo)
+                                .tint(.accentColor)
                         } else {
                             Button("글램핑", action: {
                                 self.isOutdoorGlamping = true
@@ -86,7 +86,7 @@ struct FilteringView: View {
                             Button("백패킹", action: { self.isOutdoorBackpacking = false })
                                 .foregroundColor(.white)
                                 .buttonStyle(.borderedProminent)
-                                .tint(.indigo)
+                                .tint(.accentColor)
                         } else {
                             Button("백패킹", action: {
                                 self.isOutdoorBackpacking = true
@@ -107,7 +107,7 @@ struct FilteringView: View {
                             Button("전체", action: { self.isCategoryAll = false })
                                 .foregroundColor(.white)
                                 .buttonStyle(.borderedProminent)
-                                .tint(.indigo)
+                                .tint(.accentColor)
                         } else {
                             Button("전체", action: {
                                 self.isCategoryAll = true
@@ -122,7 +122,7 @@ struct FilteringView: View {
                             Button("자유", action: { self.isCategoryFree = false })
                                 .foregroundColor(.white)
                                 .buttonStyle(.borderedProminent)
-                                .tint(.indigo)
+                                .tint(.accentColor)
                         } else {
                             Button("자유", action: {
                                 self.isCategoryFree = true
@@ -135,7 +135,7 @@ struct FilteringView: View {
                             Button("질문", action: { self.isCategoryQuestion = false })
                                 .foregroundColor(.white)
                                 .buttonStyle(.borderedProminent)
-                                .tint(.indigo)
+                                .tint(.accentColor)
                         } else {
                             Button("질문", action: {
                                 self.isCategoryQuestion = true
@@ -148,7 +148,7 @@ struct FilteringView: View {
                             Button("캠핑팁", action: { self.isCategoryTip = false })
                                 .foregroundColor(.white)
                                 .buttonStyle(.borderedProminent)
-                                .tint(.indigo)
+                                .tint(.accentColor)
                         } else {
                             Button("캠핑팁", action: {
                                 self.isCategoryTip = true
@@ -161,7 +161,7 @@ struct FilteringView: View {
                             Button("중고거래", action: { self.isCategoryMarket = false })
                                 .foregroundColor(.white)
                                 .buttonStyle(.borderedProminent)
-                                .tint(.indigo)
+                                .tint(.accentColor)
                         } else {
                             Button("중고거래", action: {
                                 self.isCategoryMarket = true
@@ -174,7 +174,7 @@ struct FilteringView: View {
                             Button("동행", action: { self.isCategoryAccompany = false })
                                 .foregroundColor(.white)
                                 .buttonStyle(.borderedProminent)
-                                .tint(.indigo)
+                                .tint(.accentColor)
                         } else {
                             Button("동행", action: {
                                 self.isCategoryAccompany = true

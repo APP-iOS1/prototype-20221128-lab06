@@ -24,35 +24,35 @@ struct PlaceView: View {
                     Text("#전체보기").padding(7)
                 }
                 .foregroundColor(placeStore.selectedCategory == "all" ? .white : .black)
-                .background(placeStore.selectedCategory == "all" ? .indigo : .white)
+                .background(placeStore.selectedCategory == "all" ? Color.accentColor : .white)
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "일반야영장" } label: {
                     Text("#캠핑").padding(7)
                 }
                 .foregroundColor(placeStore.selectedCategory == "일반야영장" ? .white : .black)
-                .background(placeStore.selectedCategory == "일반야영장" ? .indigo : .white)
+                .background(placeStore.selectedCategory == "일반야영장" ? Color.accentColor : .white)
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "자동차야영장" } label: {
                     Text("#차박").padding(5)
                 }
                 .foregroundColor(placeStore.selectedCategory == "자동차야영장" ? .white : .black)
-                .background(placeStore.selectedCategory == "자동차야영장" ? .indigo : .white)
+                .background(placeStore.selectedCategory == "자동차야영장" ? Color.accentColor : .white)
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "카라반" } label: {
                     Text("#카라반").padding(7)
                 }
                 .foregroundColor(placeStore.selectedCategory == "카라반" ? .white : .black)
-                .background(placeStore.selectedCategory == "카라반" ? .indigo : .white)
+                .background(placeStore.selectedCategory == "카라반" ? Color.accentColor : .white)
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "글램핑" } label: {
                     Text("#글램핑").padding(7)
                 }
                 .foregroundColor(placeStore.selectedCategory == "글램핑" ? .white : .black)
-                .background(placeStore.selectedCategory == "글램핑" ? .indigo : .white)
+                .background(placeStore.selectedCategory == "글램핑" ? Color.accentColor : .white)
                 .cornerRadius(10)
             }
             .padding(.vertical)
