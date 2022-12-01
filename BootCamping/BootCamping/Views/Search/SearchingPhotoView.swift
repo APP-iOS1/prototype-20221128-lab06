@@ -19,6 +19,7 @@ struct SearchingPhotoView: View {
                         .padding()
                     Spacer()
                 }
+                .padding(.bottom, -10)
                 ScrollView(.horizontal, showsIndicators: false){
                 ZStack {
                     HStack {

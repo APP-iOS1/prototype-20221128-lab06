@@ -64,26 +64,7 @@ struct SearchBar: View {
             }
             .padding(.top, 20)
             
-            if isEditing == false {
-                ScrollView {
-                    //밑에 세부 뷰
-                    RecommendHomeView(userNickName: $userNickName)
-                        .padding(.vertical, 10)
-                    Divider()
-                    
-                    HomeCategory(selection: $selection)
-                        .padding()
-                    Divider()
-                    PopularSearchResults()
-                        .padding()
-                    //            Spacer()
-                }
-            }
-            else {
-                SearchingView()
-            }
-            
-            Spacer()
+            SearchView(isEditing: $isEditing, userNickName: $userNickName, selection: $selection)
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
