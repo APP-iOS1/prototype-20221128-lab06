@@ -15,7 +15,8 @@ struct BootCampingTabView: View {
     var body: some View {
         TabView (selection: $selection) {
             NavigationStack {
-                HomeView(selection: $selection)
+//                HomeView(selection: $selection)
+                NewHomeView()
             }.tabItem {
                 Image(systemName: "house.fill")
                 Text("홈")
