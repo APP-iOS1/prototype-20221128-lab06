@@ -88,7 +88,7 @@ struct PlaceView: View {
                     placeStore.places.append(contentsOf: try await fecthData.fetchData(page: page))
                 }
             }
-            .background(Color(hue: 0.503, saturation: 0.0, brightness: 0.909))
+//            .background(Color(hue: 0.503, saturation: 0.0, brightness: 0.909))
         }
         
         .navigationBarTitleDisplayMode(.inline)

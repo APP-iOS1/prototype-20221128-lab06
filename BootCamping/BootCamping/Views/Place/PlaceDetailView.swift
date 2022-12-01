@@ -6,14 +6,31 @@
 //
 
 import SwiftUI
+import CoreLocation
+import MapKit
+
+struct AnnotatedItem: Identifiable {
+    let id = UUID()
+    var name: String
+    var coordinate: CLLocationCoordinate2D
+}
 
 struct PlaceDetailView: View {
     
-    @State private var isFavorite: Bool = false
-    
     var places: Item
+    @State var isSeleted: Bool = false
+    
+    @State private var annotatedItem: [AnnotatedItem] = []
+    @State private var isFavorite: Bool = false
+    @State private var region: MKCoordinateRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 37.5, longitude: 126.9),
+        span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+    )
     
     var body: some View {
+        
+        let filterName: String = String(Array(places.facltNm).filter { !"(주)".contains($0) })
+        let encodedStr = filterName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
         let images = ["jeju1", "jeju2", "jeju3"]
         
@@ -30,15 +47,15 @@ struct PlaceDetailView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     
                     Group {
-                        Text("#글램핑").foregroundColor(.accentColor)
+                        Text("#\(places.induty)").foregroundColor(.accentColor)
                         
-                        Text("\(String(Array(places.facltNm).filter { !"(주)".contains($0) }))")
+                        Text("\(filterName)")
                             .font(.title)
                             .kerning(-0.5)
                             .padding(.vertical, 3)
                         
-                            Text("\(Image(systemName: "star.fill")) 5.0점 (후기 4개)")
-                                .font(.footnote)
+                        Text("\(Image(systemName: "star.fill")) 5.0점 (후기 4개)")
+                            .font(.footnote)
                         
                         
                         HStack {
@@ -46,16 +63,20 @@ struct PlaceDetailView: View {
                                 .font(.footnote)
                                 .foregroundColor(.gray)
                             Spacer()
-                            NavigationLink { Text("MapView 지원 예정...\ncoming soon") } label: {
+                            Button {
+                                isSeleted.toggle()
+                            } label: {
                                 Text("\(Image(systemName: "map.fill")) 위치 보기")
                                     .font(.footnote)
                                     .foregroundColor(.accentColor)
+                            }.sheet(isPresented: $isSeleted, onDismiss: didDismiss) {
+                                SafariView(url: URL(string: "https://m.map.naver.com/search2/search.naver?query=\(encodedStr!)") ?? URL(string: "https://m.map.naver.com")!)
                             }
                         }
                         .padding(.bottom, 20)
                         
                         Text("\(places.lineIntro)").lineSpacing(7).font(.subheadline)
- 
+                        
                     }
                     Spacer()
                     Divider()
@@ -68,7 +89,14 @@ struct PlaceDetailView: View {
                     }
                     Spacer()
                     Divider()
-                    Spacer()
+                    Map(coordinateRegion: $region, annotationItems: annotatedItem) { item in
+                        MapMarker(coordinate: item.coordinate, tint: .blue)
+                    }
+                    .frame(width: 350, height: 250)
+                    .cornerRadius(10)
+                    .padding(.horizontal, 20)
+                    
+                    Divider()
                     Group {
                         Text("리뷰 모아보기").font(.callout).bold()
                         Spacer()
@@ -84,9 +112,13 @@ struct PlaceDetailView: View {
                 }
                 .padding(.horizontal, 25)
             }.ignoresSafeArea(.all, edges: .top)
+                .onAppear {
+                    region.center = CLLocationCoordinate2D(latitude: Double(places.mapY)!, longitude: Double(places.mapX)!)
+                    annotatedItem.append(AnnotatedItem(name: places.facltNm, coordinate: CLLocationCoordinate2D(latitude: Double(places.mapY)!, longitude: Double(places.mapX)!)))
+                }
             
             ZStack {
-                Link(destination: URL(string: "https://map.naver.com")!) {
+                Link(destination: (URL(string: "\(places.resveUrl)") ?? URL(string: "https://m.map.naver.com/search2/search.naver?query=\(encodedStr!)"))!) {
                     Text("예약\n하기")
                         .foregroundColor(.white)
                         .padding()
@@ -94,17 +126,20 @@ struct PlaceDetailView: View {
                         .clipShape(Circle())
                 }
             }.offset(x: 140, y: 280)
-
+            
         }
         .navigationBarItems(trailing: Button {
             isFavorite.toggle()
         } label: {
             Image(systemName: isFavorite ? "bookmark.fill" : "bookmark").foregroundColor(isFavorite ? .yellow : .white).opacity(0.8)
-                }
-                )
-
+        }
+        )
+        
     }
-
+    func didDismiss() {
+        
+    }
+    
 }
 
 //struct PlaceDetailView_Previews: PreviewProvider {
