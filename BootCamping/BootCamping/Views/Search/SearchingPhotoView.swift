@@ -55,7 +55,7 @@ struct SearchingPhotoView: View {
                             HStack {
                                 ForEach(homePhotoCards, id: \.self) { photo in
                                     NavigationLink {
-                                        PhotoDetailView()
+//                                        PhotoDetailView(listStruct: photo)
                                     } label: {
                                         ZStack(alignment: .leading) {
                                             Image(photo)
