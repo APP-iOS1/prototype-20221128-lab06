@@ -8,27 +8,73 @@
 import SwiftUI
 
 struct PhotoDetailView: View {
+    var images = ["photoCard1","photoCard2","photoCard3"]
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading) {
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            Image("photoCard1")  .aspectRatio(contentMode: .fill)
-                                .frame(width: 300, height: 400)
-                                .cornerRadius(20)
-                                .padding(.leading, 10.0)
-                            Image("photoCard2")
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 300, height: 400)
-                                .cornerRadius(20)
-                            Image("photoCard3")
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 300, height: 400)
-                                .cornerRadius(20)
-                                .padding( .trailing, 10.0)
+//                        HStack {
+//                            Image("photoCard1")  .aspectRatio(contentMode: .fill)
+//                                .frame(width: 300, height: 400)
+//                                .cornerRadius(20)
+//                                .padding(.leading, 10.0)
+//                            Image("photoCard2")
+//                                .aspectRatio(contentMode: .fill)
+//                                .frame(width: 300, height: 400)
+//                                .cornerRadius(20)
+//                            Image("photoCard3")
+//                                .aspectRatio(contentMode: .fill)
+//                                .frame(width: 300, height: 400)
+//                                .cornerRadius(20)
+//                                .padding( .trailing, 10.0)
+//
+//                        }
+                        //user 프로필
+                        HStack{
+                            Image("_chasomin")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                            .cornerRadius(50)
+                            Text("_chasomin")
+                            Spacer()
                         }
+                        .padding(.leading)
+                        
+                        // 장소,주소
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("주전패밀리캠핑장")
+                                    .font(.title3.bold())
+                                Text("상세주소")
+                            }
+                            Spacer()
+                        }
+                        .padding(.leading)
+
+                        
+                        //이미지
+                        TabView {
+                            ForEach(images, id: \.self) { item in
+                                Image(item)
+                                    .resizable()
+                                
+                            }
+                        }
+//                        .tabViewStyle(PageTabViewStyle())
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+                        .frame(width: 400,height: 400)
                     }
+                    //좋아요, 댓글
+                    HStack{
+                        Image(systemName: "heart")
+                            .font(.largeTitle)
+                        Image(systemName: "bubble.right")
+                            .font(.title)
+                    }
+                    .padding(.leading,10)
+
+                    
                     VStack(alignment: .leading) {
                         Text("여자친구와 주말 힐링 캠핑")
                             .font(.title)
