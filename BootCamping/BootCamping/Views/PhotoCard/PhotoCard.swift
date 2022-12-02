@@ -66,7 +66,7 @@ struct PhotoCard: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Text("포토")
+                Text("내 추억")
                     .font(.largeTitle)
                     .bold()
                     .accessibilityAddTraits(.isHeader)

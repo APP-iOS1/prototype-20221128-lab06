@@ -34,7 +34,7 @@ struct BootCampingTabView: View {
                 PhotoCard()
             }.tabItem {
                 Image(systemName: "photo.fill.on.rectangle.fill")
-                Text("포토")
+                Text("내 추억")
             }.tag(3)
             
             NavigationStack {
