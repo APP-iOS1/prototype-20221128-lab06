@@ -226,7 +226,6 @@
 				7C78EABD29221AD4002150EE /* PhotoDetailView.swift */,
 				79B611C92924C279001D2E03 /* gridView.swift */,
 				7CC670E9293662360088A798 /* ListView.swift */,
-				1A82C9762937182400209786 /* ListStruct.swift */,
 				1A82C97829371CCF00209786 /* ListCell.swift */,
 				7C41E8A629221C7200E87BC8 /* AddPhotoCard.swift */,
 				7C6760352935CEEB00065CF3 /* PostCell.swift */,
@@ -242,6 +241,7 @@
 				6331F3E72935A75B004F879E /* FetchData.swift */,
 				63FA00E12922B5F600D433AB /* Posts.swift */,
 				7C9DE168292280A20010BF13 /* PhotoCardData.swift */,
+				1A82C9762937182400209786 /* ListStruct.swift */,
 				0622F6062924BCBC008BD011 /* TabSelection.swift */,
 				6352F45A29388F20009A1872 /* Theme.swift */,
 			);
