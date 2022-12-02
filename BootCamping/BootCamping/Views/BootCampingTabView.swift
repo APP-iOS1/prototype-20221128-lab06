@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BootCampingTabView: View {
-    @State var text: String = " "
+    @State var text: String = ""
     @State private var selection: Int = 1
     @Binding var userNickName: String
     
