@@ -23,7 +23,7 @@ struct BootCampingTabView: View {
             }.tag(1)
             
             NavigationStack {
-                SearchBar(text: $text, userNickName: $userNickName, selection: $selection)
+                SearchBar(placeStore: PlaceStore(), text: $text, userNickName: $userNickName, selection: $selection)
             }.tabItem {
                 Image(systemName: "location.magnifyingglass")
                 Text("검색")
