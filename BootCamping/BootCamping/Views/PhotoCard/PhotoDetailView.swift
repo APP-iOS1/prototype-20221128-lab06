@@ -60,6 +60,7 @@ struct PhotoDetailView: View {
                             .font(.title)
                     }
                     .padding(.leading,10)
+                    .padding(.bottom, -40)
 
                     // 제목, 날짜, 글
                     VStack(alignment: .leading) {
