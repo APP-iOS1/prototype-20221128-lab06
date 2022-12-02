@@ -20,7 +20,7 @@ struct CommunitySearchView: View {
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                 if searchText.isEmpty {
                 } else {
-                    VStack {
+                    HStack {
                         ForEach(communityKeywords.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {recommendSearch in
                             Button {
                                searchText = recommendSearch
@@ -28,6 +28,8 @@ struct CommunitySearchView: View {
                                 Text(recommendSearch)
                             }
                         }
+                        .padding(.leading, 52)
+                        Spacer()
                     }
                     //리스트의 스타일 수정
                     .listStyle(PlainListStyle())
@@ -40,7 +42,9 @@ struct CommunitySearchView: View {
                 
             }
         }
-        .frame(height: searchText.isEmpty ? 30 : 30 * CGFloat( communityKeywords.filter{$0.hasPrefix(searchText) || searchText == ""}.count + 1))
+        .frame(height: searchText.isEmpty ? 30 : 90)
+                
+//                30 * CGFloat( communityKeywords.filter{$0.hasPrefix(searchText) || searchText == ""}.count + 1) * 2)
     }
 }
 
