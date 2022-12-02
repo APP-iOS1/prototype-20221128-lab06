@@ -11,7 +11,7 @@ import SwiftUI
 struct BootCampingApp: App {
     var body: some Scene {
         WindowGroup {
-            BootCampingTabView(userNickName: .constant("멋사"))
+            BootCampingTabView(userNickName: .constant("멋사"), searchText: .constant(""))
                 .environmentObject(PlaceStore())
         }
     }
