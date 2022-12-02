@@ -35,6 +35,7 @@
 		79442CB529387C5A0014804D /* FollowPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79442CB429387C5A0014804D /* FollowPhotoView.swift */; };
 		79442CB729388DFC0014804D /* FollowListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79442CB629388DFC0014804D /* FollowListView.swift */; };
 		79B611CA2924C279001D2E03 /* gridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B611C92924C279001D2E03 /* gridView.swift */; };
+		7C0B36772939C1DB00D600F9 /* CommunitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B36762939C1DB00D600F9 /* CommunitySearchView.swift */; };
 		7C2EF034292296C9002D286F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2EF033292296C9002D286F /* ImagePickerView.swift */; };
 		7C41E8A729221C7200E87BC8 /* AddPhotoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C41E8A629221C7200E87BC8 /* AddPhotoCard.swift */; };
 		7C67602C2935A98200065CF3 /* PhotoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C67602B2935A98200065CF3 /* PhotoCardView.swift */; };
@@ -86,6 +87,7 @@
 		79442CB429387C5A0014804D /* FollowPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowPhotoView.swift; sourceTree = "<group>"; };
 		79442CB629388DFC0014804D /* FollowListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowListView.swift; sourceTree = "<group>"; };
 		79B611C92924C279001D2E03 /* gridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gridView.swift; sourceTree = "<group>"; };
+		7C0B36762939C1DB00D600F9 /* CommunitySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchView.swift; sourceTree = "<group>"; };
 		7C2EF033292296C9002D286F /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		7C41E8A629221C7200E87BC8 /* AddPhotoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoCard.swift; sourceTree = "<group>"; };
 		7C67602B2935A98200065CF3 /* PhotoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCardView.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				63E8521C2922170A00842CD8 /* CommunityView.swift */,
+				7C0B36762939C1DB00D600F9 /* CommunitySearchView.swift */,
 				7C6760332935CE8000065CF3 /* FilteringView.swift */,
 				63E8521F2922359D00842CD8 /* WriteView.swift */,
 				6352F45829388E30009A1872 /* CommunityDetailView.swift */,
@@ -361,6 +364,7 @@
 				63E852202922359D00842CD8 /* WriteView.swift in Sources */,
 				7C7B5F542938924D00E45B3B /* SearchingMapView.swift in Sources */,
 				6327BE49292240D4000BA3FF /* MyPageView.swift in Sources */,
+				7C0B36772939C1DB00D600F9 /* CommunitySearchView.swift in Sources */,
 				6327BE4D292240E0000BA3FF /* PlaceCardView.swift in Sources */,
 				1A82C97529370E8C00209786 /* SearchBar.swift in Sources */,
 				7C6760362935CEEB00065CF3 /* PostCell.swift in Sources */,

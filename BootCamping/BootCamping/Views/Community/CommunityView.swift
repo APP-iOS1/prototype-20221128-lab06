@@ -9,12 +9,14 @@ import SwiftUI
 
 struct CommunityView: View {
     @ObservedObject var postStore: PostStore
-    
+    @Binding var searchText: String
     
     var body: some View {
         VStack {
             FilteringView()
                 .padding()
+            CommunitySearchView()
+                .padding(.bottom, 5)
             ScrollView {
                 ForEach (postStore.postData) { post in
                     NavigationLink {
@@ -39,12 +41,11 @@ struct CommunityView: View {
         }, label: {
             Text("글쓰기")
         }))
-                                               
     }
 }
 
 struct CommunityView_Previews: PreviewProvider {
     static var previews: some View {
-        CommunityView(postStore: PostStore())
+        CommunityView(postStore: PostStore(), searchText: .constant(""))
     }
 }

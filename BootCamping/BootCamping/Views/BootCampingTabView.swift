@@ -11,6 +11,7 @@ struct BootCampingTabView: View {
     @State var text: String = " "
     @State private var selection: Int = 1
     @Binding var userNickName: String
+    @Binding var searchText: String
     
     var body: some View {
         TabView (selection: $selection) {
@@ -45,7 +46,7 @@ struct BootCampingTabView: View {
             }.tag(4)
             
             NavigationStack {
-                CommunityView(postStore: PostStore())
+                CommunityView(postStore: PostStore(), searchText: $searchText)
             }.tabItem {
                 Image(systemName: "newspaper.fill")
                 Text("커뮤니티")
@@ -62,6 +63,6 @@ struct BootCampingTabView: View {
 
 struct BootCampingTabView_Previews: PreviewProvider {
     static var previews: some View {
-        BootCampingTabView(userNickName: .constant("멋사"))
+        BootCampingTabView(userNickName: .constant("멋사"), searchText: .constant(""))
     }
 }
