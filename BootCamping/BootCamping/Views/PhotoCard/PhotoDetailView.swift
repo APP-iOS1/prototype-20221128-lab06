@@ -7,10 +7,11 @@
 
 import SwiftUI
 
+
 struct PhotoDetailView: View {
     
     var listStruct: ListSturct
-    
+    @State private var isMore: Bool = false
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -60,14 +61,34 @@ struct PhotoDetailView: View {
                     }
                     .padding(.leading,10)
 
-                    
+                    // 제목, 날짜, 글
                     VStack(alignment: .leading) {
                         Text(listStruct.title)
                             .font(.title)
                             .padding(.top, 20.0)
-                        Text(listStruct.content)
-                            .lineSpacing(7)
-                            .padding(.all, 1.0)
+                        Text(listStruct.date)
+                            .padding(.bottom)
+                        
+                        //더보기
+                        if isMore == false {
+                            HStack{
+                                Text(listStruct.content)
+                                    .lineSpacing(7)
+                                    .padding(.all, 1.0)
+                                    .lineLimit(1)
+                                Button {
+                                    isMore = true
+                                } label: {
+                                    Text("더보기")
+                                }
+                            }
+                            
+                        } else {
+                            Text(listStruct.content)
+                                .lineSpacing(7)
+                                .padding(.all, 1.0)
+                        }
+                        
                         Spacer()
                     }.padding()
                 }
