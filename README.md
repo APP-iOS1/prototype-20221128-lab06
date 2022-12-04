@@ -12,7 +12,7 @@
 
 
 ## 스크린샷
-<img src="Simulator Screen Shot - iPhone 14 Pro - 2022-12-04 at 21.46.44.png">
+<img src="./Simulator Screen Shot - iPhone 14 Pro - 2022-12-04 at 21.46.44.png">
 
 
 ## 참여자
