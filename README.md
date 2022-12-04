@@ -15,7 +15,7 @@
 ![Simulator Screen Shot - iPhone 14 Pro - 2022-12-04 at 21 46 44](https://user-images.githubusercontent.com/106993057/205495512-bf061390-abc5-4013-891e-3b6b5d72bcaa.png)
 
 
-<img src="/Users/deokhunkim/Desktop/Simulator Screen Shot - iPhone 14 Pro - 2022-12-04 at 21.46.44.png">
+<img src="https://user-images.githubusercontent.com/106993057/205495512-bf061390-abc5-4013-891e-3b6b5d72bcaa.png" width="300" height="600">
 
 
 ## 참여자
