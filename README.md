@@ -13,13 +13,7 @@
 
 ## 스크린샷
 
-<img src="https://user-images.githubusercontent.com/106993057/205495512-bf061390-abc5-4013-891e-3b6b5d72bcaa.png" width="200" height="400">
-
-<img src=”[https://user-images.githubusercontent.com/106993057/205495881-80c6dd82-0cbd-4f06-8206-00510db57006.png](https://user-images.githubusercontent.com/106993057/205495881-80c6dd82-0cbd-4f06-8206-00510db57006.png)” width="200" height="400">
-
-<img src="[https://user-images.githubusercontent.com/106993057/205495888-85583f07-4c36-4a2d-814b-b1b2f5a3768e.png](https://user-images.githubusercontent.com/106993057/205495888-85583f07-4c36-4a2d-814b-b1b2f5a3768e.png)" width="200" height="400">
-
-<img src="[https://user-images.githubusercontent.com/106993057/205495889-8acd14b6-5fdf-42bf-900a-634c0a0283ee.png](https://user-images.githubusercontent.com/106993057/205495889-8acd14b6-5fdf-42bf-900a-634c0a0283ee.png)" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/106993057/205495512-bf061390-abc5-4013-891e-3b6b5d72bcaa.png" width="200" height="400"> <img src=”[https://user-images.githubusercontent.com/106993057/205495881-80c6dd82-0cbd-4f06-8206-00510db57006.png](https://user-images.githubusercontent.com/106993057/205495881-80c6dd82-0cbd-4f06-8206-00510db57006.png)” width="200" height="400"> <img src="[https://user-images.githubusercontent.com/106993057/205495888-85583f07-4c36-4a2d-814b-b1b2f5a3768e.png](https://user-images.githubusercontent.com/106993057/205495888-85583f07-4c36-4a2d-814b-b1b2f5a3768e.png)" width="200" height="400"> <img src="[https://user-images.githubusercontent.com/106993057/205495889-8acd14b6-5fdf-42bf-900a-634c0a0283ee.png](https://user-images.githubusercontent.com/106993057/205495889-8acd14b6-5fdf-42bf-900a-634c0a0283ee.png)" width="200" height="400">
 
 <img src="[https://user-images.githubusercontent.com/106993057/205495895-4571e9df-9b06-4870-8f54-ec0f268a7549.png](https://user-images.githubusercontent.com/106993057/205495895-4571e9df-9b06-4870-8f54-ec0f268a7549.png)" width="200" height="400">
 
