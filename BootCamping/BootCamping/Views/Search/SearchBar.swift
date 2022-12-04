@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SearchBar: View {
+    @ObservedObject var placeStore: PlaceStore
+    
     @Binding var text: String
     
     @State private var isEditing = false
@@ -16,12 +18,18 @@ struct SearchBar: View {
     
     @Binding var selection: Int
     
+    var camper = ["_chasomin","chohh02","JJ_ang","outdoorlife.prim","thekoon_","bestagrammm","디노담양힐링파크지점","쉐르빌리안티티","아웃오브파크","양촌여울체험캠프","어반슬로우시티","드림랜드오토캠핑장", "자연인", "덕훈캠핑장", "동훈캠핑장", "현호캠핑장", "소민캠핑장", "소영캠핑장"]
+    
+//    var facltNm = ["디노담양힐링파크","쉐르빌리안티티","아웃오브파크","양촌여울체험캠프","어반슬로우시티","드림랜드오토캠핑장", "자연인"]
+    
+    @State private var toggleSearchingView = false
+    
     var body: some View {
         
         VStack {
             //검색 탭
             HStack {
-                TextField("Search ...", text: $text)
+                TextField("지역, 포토, 캠퍼 검색", text: $text, onCommit:{ toggleSearchingView.toggle()})
                     .padding(7)
                     .padding(.horizontal, 25)
                     .background(Color(.systemGray6))
@@ -41,6 +49,7 @@ struct SearchBar: View {
                                         .foregroundColor(.gray)
                                         .padding(.trailing, 8)
                                 }
+                                
                             }
                         }
                     )
@@ -57,14 +66,25 @@ struct SearchBar: View {
                     }) {
                         Text("Cancel")
                     }
-                    .padding(.trailing, 10)
                     .transition(.move(edge: .trailing))
-                    .animation(.default)
+//                    .animation(.default)
                 }
             }
-            .padding(.top, 20)
             
-            SearchView(isEditing: $isEditing, userNickName: $userNickName, selection: $selection)
+            if isEditing {
+                if text != "" {
+                    List {
+                        ForEach(camper.filter({"\($0)".contains(self.text) || self.text.isEmpty}), id: \.self) { item in
+                            VStack{
+                                Text(item)
+                            }
+                        }
+                    }.listStyle(.plain)
+                        .frame(height: text.isEmpty ? 30 : 120)
+                }
+            }
+            
+            SearchView(toggleSearchingView: $toggleSearchingView, isEditing: $isEditing, userNickName: $userNickName, selection: $selection)
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -76,10 +96,9 @@ struct SearchBar: View {
         }
     }
 }
-    
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(text: .constant(""), userNickName: .constant("멋사"), selection: .constant(4))
+        SearchBar(placeStore: PlaceStore(), text: .constant(""), userNickName: .constant("멋사"), selection: .constant(4))
     }
 }

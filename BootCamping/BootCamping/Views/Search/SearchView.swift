@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
+    @Binding var toggleSearchingView: Bool
     
     @Binding var isEditing: Bool
     
@@ -31,9 +32,10 @@ struct SearchView: View {
                 //            Spacer()
             }
         }
-        else {
+        if toggleSearchingView {
             SearchingView(placeStore: PlaceStore())
         }
+        
         
         Spacer()
     }
@@ -41,6 +43,6 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(isEditing: .constant(false), userNickName: .constant("멋사"), selection: .constant(4))
+        SearchView(toggleSearchingView: .constant(false), isEditing: .constant(false), userNickName: .constant("멋사"), selection: .constant(4))
     }
 }

@@ -67,7 +67,7 @@ struct PlaceDetailView: View {
                             Button {
                                 isSeleted.toggle()
                             } label: {
-                                Text("\(Image(systemName: "map.fill")) 위치 보기")
+                                Text("\(Image(systemName: "map.fill")) 경로 확인")
                                     .font(.footnote)
                                     .foregroundColor(.accentColor)
                             }.sheet(isPresented: $isSeleted, onDismiss: didDismiss) {

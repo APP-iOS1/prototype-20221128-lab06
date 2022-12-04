@@ -13,6 +13,7 @@ struct PhotoCard: View {
     @State private var isRectangle: Bool = true
     @State private var isGrid: Bool = false
     @State private var isList: Bool = false
+    @ObservedObject var listStore: ListStore = ListStore()
     
     var body: some View {
         VStack{
@@ -52,7 +53,7 @@ struct PhotoCard: View {
             
             ZStack {
                 if isRectangle {
-                    PhotoCardView()
+                    PhotoCardView(listStore: listStore)
                 } else if isGrid {
                     gridView()
                 } else if isList{
@@ -65,7 +66,7 @@ struct PhotoCard: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Text("포토")
+                Text("내 추억")
                     .font(.largeTitle)
                     .bold()
                     .accessibilityAddTraits(.isHeader)
@@ -82,130 +83,6 @@ struct PhotoCard: View {
         //                    Text("추억 더하기")
         //                        .foregroundColor(.accentColor)
         //                }))
-    }
-}
-
-struct PhotoMainStory: View {
-    var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading) {
-                Text("2022.11.10")
-                    .font(.title3)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    .padding(.vertical, 1.0)
-                
-                Text("북분솔밭캠핑장")
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    .padding(.vertical, 3.0)
-                
-                HStack {
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star")
-                }
-                .font(.title3)
-                .bold()
-                .foregroundColor(.white)
-                .padding(.horizontal)
-                .padding(.vertical, 5.0)
-                
-                Text("여자친구와 주말 힐링 데이트")
-                    .font(.title3)
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    .padding(.vertical, 15.0)
-                
-            }
-        }
-    }
-}
-
-struct PhotoMainStory2: View {
-    var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading) {
-                Text("2021.11.29")
-                    .font(.title3)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    .padding(.vertical, 1.0)
-                
-                Text("주전패밀리캠핑장")
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    .padding(.vertical, 3.0)
-                
-                HStack {
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                }
-                .font(.title3)
-                .bold()
-                .foregroundColor(.white)
-                .padding(.horizontal)
-                .padding(.vertical, 5.0)
-                
-                Text("친구들과 1년만에 캠핑!")
-                    .font(.title3)
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    .padding(.vertical, 15.0)
-            }
-        }
-    }
-}
-
-struct PhotoMainStory3: View {
-    var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading) {
-                Text("2021.8.25")
-                    .font(.title3)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    .padding(.vertical, 1.0)
-                
-                Text("애플오토캠핑장")
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    .padding(.vertical, 3.0)
-                
-                HStack {
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                    Image(systemName: "star.fill")
-                }
-                .font(.title3)
-                .bold()
-                .foregroundColor(.white)
-                .padding(.horizontal)
-                .padding(.vertical, 5.0)
-                
-                Text("가족들과 즐거운 캠핑!")
-                    .font(.title3)
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    .padding(.vertical, 15.0)
-            }
-        }
     }
 }
 
