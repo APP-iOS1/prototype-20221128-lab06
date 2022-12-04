@@ -23,7 +23,7 @@
 - MapKit을 활용해 실제 캠핑장 위치 맵뷰로 구현
 - ObservableObject 활용해 커뮤니티 작성글 저장, 업데이트
 - 다크모드 구현
-- 
+
 ## 스크린샷
 
 <img src="https://user-images.githubusercontent.com/106993057/205495512-bf061390-abc5-4013-891e-3b6b5d72bcaa.png" width="200" height="400"> <img src="https://user-images.githubusercontent.com/106993057/205495881-80c6dd82-0cbd-4f06-8206-00510db57006.png" width="200" height="400"> <img src="https://user-images.githubusercontent.com/106993057/205495888-85583f07-4c36-4a2d-814b-b1b2f5a3768e.png" width="200" height="400"> <img src="https://user-images.githubusercontent.com/106993057/205495889-8acd14b6-5fdf-42bf-900a-634c0a0283ee.png" width="200" height="400">
@@ -43,6 +43,7 @@
 - 현호님 : 홈 탭, 검색 탭
 - 소영님 : 아이디어 제공, 검색 탭
 
+------------------------------------
 - 이전 멤버
 초기멤버 : 덕훈님, 동훈님, 소민님, 수민님
 
@@ -56,4 +57,4 @@
 - 수민님 : 커뮤니티 탭, 장소 탭, 마이 캠핑 탭
 - 희경님 : 홈 탭, Places 구조체 수정
 - 창휘님 : 국방의 의무를 다하러 가셨습니다
----
+------------------------------------
