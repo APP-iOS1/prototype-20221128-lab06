@@ -29,7 +29,7 @@ struct FollowListView: View {
                         ZStack{
                             Rectangle()
                                 .frame(width: 70, height: 30)
-                                .foregroundColor(Color.accentColor)
+                                .foregroundColor(Color(UIColor.pointColor!))
                                 .cornerRadius(5)
                             Text("팔로워 \(followerCamper.count)")
                                 .foregroundColor(.white)
@@ -48,7 +48,7 @@ struct FollowListView: View {
                         ZStack{
                             Rectangle()
                                 .frame(width: 70, height: 30)
-                                .foregroundColor(Color.accentColor)
+                                .foregroundColor(Color(UIColor.pointColor!))
                                 .cornerRadius(5)
                             Text("팔로잉 \(followingCamper.count)")
                                 .foregroundColor(.white)

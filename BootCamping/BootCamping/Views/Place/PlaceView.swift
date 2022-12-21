@@ -25,36 +25,36 @@ struct PlaceView: View {
                 Button { placeStore.selectedCategory = "all" } label: {
                     Text("#전체보기").padding(7).font(.subheadline)
                 }
-                .foregroundColor(placeStore.selectedCategory == "all" ? Theme.myBackgroundColor(forScheme: scheme) : Color.accentColor)
-                .background(placeStore.selectedCategory == "all" ? Color.accentColor : Theme.myBackgroundColor(forScheme: scheme))
+                .foregroundColor(placeStore.selectedCategory == "all" ? Theme.myBackgroundColor(forScheme: scheme) : Color(UIColor.pointColor!))
+                .background(placeStore.selectedCategory == "all" ? Color(UIColor.pointColor!) : Theme.myBackgroundColor(forScheme: scheme))
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "일반야영장" } label: {
                     Text("#캠핑").padding(7).font(.subheadline)
                 }
-                .foregroundColor(placeStore.selectedCategory == "일반야영장" ? Theme.myBackgroundColor(forScheme: scheme) : Color.accentColor)
-                .background(placeStore.selectedCategory == "일반야영장" ? Color.accentColor : Theme.myBackgroundColor(forScheme: scheme))
+                .foregroundColor(placeStore.selectedCategory == "일반야영장" ? Theme.myBackgroundColor(forScheme: scheme) : Color(UIColor.pointColor!))
+                .background(placeStore.selectedCategory == "일반야영장" ? Color(UIColor.pointColor!) : Theme.myBackgroundColor(forScheme: scheme))
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "자동차야영장" } label: {
                     Text("#차박").padding(7).font(.subheadline)
                 }
-                .foregroundColor(placeStore.selectedCategory == "자동차야영장" ? Theme.myBackgroundColor(forScheme: scheme) : Color.accentColor)
-                .background(placeStore.selectedCategory == "자동차야영장" ? Color.accentColor : Theme.myBackgroundColor(forScheme: scheme))
+                .foregroundColor(placeStore.selectedCategory == "자동차야영장" ? Theme.myBackgroundColor(forScheme: scheme) : Color(UIColor.pointColor!))
+                .background(placeStore.selectedCategory == "자동차야영장" ? Color(UIColor.pointColor!) : Theme.myBackgroundColor(forScheme: scheme))
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "카라반" } label: {
                     Text("#카라반").padding(7).font(.subheadline)
                 }
-                .foregroundColor(placeStore.selectedCategory == "카라반" ? Theme.myBackgroundColor(forScheme: scheme) : Color.accentColor)
-                .background(placeStore.selectedCategory == "카라반" ? Color.accentColor : Theme.myBackgroundColor(forScheme: scheme))
+                .foregroundColor(placeStore.selectedCategory == "카라반" ? Theme.myBackgroundColor(forScheme: scheme) : Color(UIColor.pointColor!))
+                .background(placeStore.selectedCategory == "카라반" ? Color(UIColor.pointColor!) : Theme.myBackgroundColor(forScheme: scheme))
                 .cornerRadius(10)
                 
                 Button { placeStore.selectedCategory = "글램핑" } label: {
                     Text("#글램핑").padding(7).font(.subheadline)
                 }
-                .foregroundColor(placeStore.selectedCategory == "글램핑" ? Theme.myBackgroundColor(forScheme: scheme) : Color.accentColor)
-                .background(placeStore.selectedCategory == "글램핑" ? Color.accentColor : Theme.myBackgroundColor(forScheme: scheme))
+                .foregroundColor(placeStore.selectedCategory == "글램핑" ? Theme.myBackgroundColor(forScheme: scheme) : Color(UIColor.pointColor!))
+                .background(placeStore.selectedCategory == "글램핑" ? Color(UIColor.pointColor!) : Theme.myBackgroundColor(forScheme: scheme))
                 .cornerRadius(10)
             }
             .padding(.vertical)

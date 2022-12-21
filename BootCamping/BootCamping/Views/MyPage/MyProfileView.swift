@@ -56,7 +56,7 @@ struct LoginButton: View {
                 .foregroundColor(.white)
                 .padding()
         }
-        .background(Color(accentColor as! CGColor))
+        .background(Color(Color(UIColor.pointColor!) as! CGColor))
         .cornerRadius(20)
         .frame(height: 150)
     }

@@ -32,7 +32,7 @@ struct HomeView: View {
                                 isSheeting.toggle()
                             } label: {
                                 Image(systemName: "person.fill")
-                                    .foregroundColor(.accentColor)
+                                    .foregroundColor(Color(UIColor.pointColor!))
                                     .font(.title)
                             }
                             .padding(.top, 9)
