@@ -13,10 +13,11 @@ struct BootCampingTabView: View {
     @Binding var userNickName: String
     @Binding var searchText: String
     
+
     var body: some View {
         TabView (selection: $selection) {
             NavigationStack {
-//                HomeView(selection: $selection)
+                //                HomeView(selection: $selection)
                 NewHomeView()
             }.tabItem {
                 Image(systemName: "house.fill")
@@ -40,7 +41,7 @@ struct BootCampingTabView: View {
             NavigationStack {
                 PlaceView()
             }.tabItem {
-//                Image(systemName: "location.magnifyingglass")
+                //                Image(systemName: "location.magnifyingglass")
                 Image(systemName: "map.fill")
                 Text("플레이스")
             }.tag(4)
@@ -51,18 +52,29 @@ struct BootCampingTabView: View {
                 Image(systemName: "newspaper.fill")
                 Text("커뮤니티")
             }.tag(5)
-//            NavigationStack {
-//                MyPageView()
-//            }.tabItem {
-//                Image(systemName: "person.fill")
-//                Text("마이 캠핑")
-//            }.tag(5)
+            //            NavigationStack {
+            //                MyPageView()
+            //            }.tabItem {
+            //                Image(systemName: "person.fill")
+            //                Text("마이 캠핑")
+            //            }.tag(5)
         }
+        .onAppear {
+                                // correct the transparency bug for Tab bars
+                                let tabBarAppearance = UITabBarAppearance()
+                                tabBarAppearance.configureWithOpaqueBackground()
+                                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+//                                // correct the transparency bug for Navigation bars
+//                                let navigationBarAppearance = UINavigationBarAppearance()
+//                                navigationBarAppearance.configureWithOpaqueBackground()
+//                                UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+                            }
     }
+
 }
 
-struct BootCampingTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        BootCampingTabView(userNickName: .constant("멋사"), searchText: .constant(""))
-    }
-}
+//struct BootCampingTabView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BootCampingTabView(userNickName: .constant("멋사"), searchText: .constant(""))
+//    }
+//}

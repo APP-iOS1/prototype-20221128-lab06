@@ -35,3 +35,7 @@ struct Theme {
         }
     }
 }
+
+extension UIColor {
+    static let pointColor = UIColor(named: "pointColor")
+}

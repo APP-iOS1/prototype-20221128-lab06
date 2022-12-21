@@ -55,7 +55,7 @@ struct ProfileView: View {
                 Spacer()
                 Image(systemName: "person.circle.fill")
                     .font(.largeTitle)
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(Color(UIColor.pointColor!))
             }
         }
         .padding()

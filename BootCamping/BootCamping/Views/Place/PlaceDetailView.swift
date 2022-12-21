@@ -69,7 +69,7 @@ struct PlaceDetailView: View {
                             } label: {
                                 Text("\(Image(systemName: "map.fill")) 경로 확인")
                                     .font(.footnote)
-                                    .foregroundColor(.accentColor)
+                                    .foregroundColor(Color(UIColor.pointColor!))
                             }.sheet(isPresented: $isSeleted, onDismiss: didDismiss) {
                                 SafariView(url: URL(string: "https://m.map.naver.com/search2/search.naver?query=\(encodedStr!)") ?? URL(string: "https://m.map.naver.com")!)
                             }
@@ -133,7 +133,7 @@ struct PlaceDetailView: View {
                     Text("예약\n하기")
                         .foregroundColor(.white)
                         .padding()
-                        .background(Color.accentColor)
+                        .background(Color(UIColor.pointColor!))
                         .clipShape(Circle())
                 }
             }.offset(x: 140, y: 280)

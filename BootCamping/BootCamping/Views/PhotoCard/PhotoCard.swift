@@ -25,7 +25,7 @@ struct PhotoCard: View {
                     isList = false
                 } label: {
                     Image(systemName: "rectangle.portrait.fill")
-                        .foregroundColor(isRectangle ? .accentColor : .gray)
+                        .foregroundColor(isRectangle ? Color(UIColor.pointColor!) : .gray)
                         .font(.title3)
 
                 }
@@ -36,7 +36,7 @@ struct PhotoCard: View {
                     isList = false
                 } label: {
                     Image(systemName: "square.grid.2x2.fill")
-                        .foregroundColor(isGrid ? .accentColor : .gray)
+                        .foregroundColor(isGrid ? Color(UIColor.pointColor!) : .gray)
                         .font(.title3)
                 }
                 
@@ -46,7 +46,7 @@ struct PhotoCard: View {
                     isList = true
                 } label: {
                     Image(systemName: "list.bullet")
-                        .foregroundColor(isList ? .accentColor : .gray)
+                        .foregroundColor(isList ? Color(UIColor.pointColor!) : .gray)
                         .font(.title3).bold()
                 }
             }.padding(.trailing)
@@ -81,7 +81,7 @@ struct PhotoCard: View {
         //                .navigationTitle("추억")
         //                .navigationBarItems(trailing: NavigationLink(destination: AddPhotoCard(), label: {
         //                    Text("추억 더하기")
-        //                        .foregroundColor(.accentColor)
+        //                        .foregroundColor(Color(UIColor.pointColor!))
         //                }))
     }
 }
